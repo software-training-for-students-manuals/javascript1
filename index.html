@@ -1,27 +1,64 @@
 <!DOCTYPE html>
-<html>
-<!-- 
+<!-- saved from url=(0054)https://sts.doit.wisc.edu/manuals/javascript1/#outline -->
+<html><!-- 
 WELCOME USER! You've reached the source code for a manual created by STS. If you plan on updating or editing this manual, then you're in the right place!
 
-Before editing any STS manuals, please read through the editing guide at https://sts.doit.wisc.edu/manual-editing-guide and follow all recommendations. It is important that we follow the conventions set in the guide in order to maintain quality and consistency across all of our training materials.
+Before editing this manual, please read through the manual editing guide at https://sts.doit.wisc.edu/manuals/manual-editing-guide/ and follow its recommendations. It is important that we adhere to the conventions set in the guide in order to maintain quality and consistency across all manuals.
+
+A few things to note:
+
+* In order to have a working preview with accurate CSS and functional JavaScript, you will need a copy of the /master-files folder in the same parent directory as the folder with your manual editing files in it, e.g. if you have a folder on your desktop "STS Manuals", and you're editing the Excel 1 manual in the "excel1" folder and the Photoshop 1 folder in the "photoshop1" folder, you will need to have the "master-files" folder in "STS Manuals" as well, since the manual files link to the CSS/Javascript using relative links. Your folder will look like this: 
+
+├STS Manuals 
+├╴╴excel1
+├╴╴╴╴╴images
+├╴╴╴╴╴class_files
+├╴╴master-files
+├╴╴photoshop1
+├╴╴╴╴╴images
+├╴╴╴╴╴class_files
+
+
+* Manuals should be arranged into Topics, which are enclosed in the <section class="topic"> tag, and followed immediately by an <h1> tag with the topic name in it, e.g.
+
+<section class="topic">
+<h1>Topic name</h1>
+<p>Neat and helpful information goes here</p>
+</section>
+
+The <section class="topic"> and following <h1> element are how the manual's JavaScript automagically builds the Topics outline and creates the links, so if they are not there, the manual will be without a table of contents and its friends will probably make fun of it (which is decidedly not cool).
+
+* Unless you are changing the contents of the <title></title> tag, you should not have to touch the <head> portion of this document (unless instructed to do so). This tag connects the HTML to the CSS and JavaScript that keep the manual functioning. Look for the comment tag that says "MAIN CONTENT", and you may edit there.
+
 
 Good luck, and have fun!
--->
 
-    <head>
+--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!-- Manual title -->
         <title>JavaScript 1</title>
-        <meta charset="utf-8">
+        
         <meta name="description" content="Software manual provided by Software Training for Students at the University of Wisconsin.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel='stylesheet' id='uwmadison-fonts-css'  href='https://brand.wisc.edu/content/themes/uw-theme/dist/fonts/uw160/fonts.css?ver=1.1.1' type='text/css' media='all' /><link rel="stylesheet" type="text/css" href="../master-files/css/stylesheet.css">
-        <script src="../master-files/highlight.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="../master-files/smooth-scroll.js"></script>
-        <script src="../master-files/primary-functions.js"></script>
-        <script src="../master-files/ga.js"></script>
+        <link rel="stylesheet" id="uwmadison-fonts-css" href="./JavaScript 1_upd_files/fonts.css" type="text/css" media="all">
+        <link rel="stylesheet" type="text/css" href="./JavaScript 1_upd_files/stylesheet.css">
+        <script type="text/javascript" async="" src="./JavaScript 1_upd_files/analytics.js.download"></script><script src="./JavaScript 1_upd_files/highlight.js.download"></script>
+        <script src="./JavaScript 1_upd_files/jquery.min.js.download"></script>
+        <script src="./JavaScript 1_upd_files/smooth-scroll.js.download"></script>
+        <script src="./JavaScript 1_upd_files/primary-functions.js.download"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="./JavaScript 1_upd_files/js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-4370707-17');
+
+        </script>
 
 
     </head>
@@ -33,84 +70,116 @@ Good luck, and have fun!
                 <h1>JavaScript 1</h1>
                 <h2>Introduction to Programming for the Web</h2>
             </div>
-            <div id="about-page"></div>
-            <div id="outline"></div>
+            <div id="about-page"><div id="coverpage-description"> <img src="./JavaScript 1_upd_files/uwlogo.png" alt="UW-Madison Crest with the name of Academic Technology next to it">
+    <p>Written, designed, and produced by:</p>
+    <p>Software Training for Students</p>
+</div>
+
+<h1 class="no-top-margin">About Software Training for Students</h1>
+<p>Software Training for Students is an organization on campus that provides free software training to all students and faculty. Our services include custom workshops, open-enrollment classes, one-on-one project help, and access to Lynda.com. For more information on the Software Training for Students (STS) program, visit our website at <strong><a href="http://wisc.edu/sts">wisc.edu/sts</a></strong>.</p>
+
+<div class="full-width-image">
+    <a href="https://wisc.edu/sts/" target="_blank"><img src="./JavaScript 1_upd_files/sts-services.png" alt="The services offered by Software Training for Students"></a>
+</div>
+<p>STS is part of the Division of Information Technology (DoIT) - Academic Technology at UW-Madison. For more information regarding DoIT Academic Technology, visit <strong><a href="https://at.doit.wisc.edu/">at.doit.wisc.edu</a></strong>.</p>
+</div>
+            <div id="outline" class="outline-parent" data-scroll-id="outline" tabindex="-1" style="outline: none;"><h1>Topics</h1><button id="toggle-subtopics">Hide Subtopics</button><ol class="primary-topics"><li id="Introduction_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction">Introduction</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction_About%20this%20Class">About this Class</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction_Topics">Topics</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction_Required%20Skills">Required Skills</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction_Other%20Requirements">Other Requirements</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction_Accessibility">Accessibility</a></li></ol></li><li id="Introduction to JavaScript_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction%20to%20JavaScript">Introduction to JavaScript</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction%20to%20JavaScript_JavaScript%20History">JavaScript History</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction%20to%20JavaScript_Client-Side%20Scripting">Client-Side Scripting</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Introduction%20to%20JavaScript_Uses%20of%20JavaScript">Uses of JavaScript</a></li></ol></li><li id="JavaScript Basics_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#JavaScript%20Basics">JavaScript Basics</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#JavaScript%20Basics_In-Line%20Scripting">In-Line Scripting</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#JavaScript%20Basics_Writing%20JavaScript%20to%20the%20Console">Writing JavaScript to the Console</a></li></ol></li><li id="ToDo List Web Application_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20Application">ToDo List Web Application</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20Application_The%20Finished%20Product">The Finished Product</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20Application_Intro%20to%20Building%20the%20Application">Intro to Building the Application</a></li></ol></li><li id="Variables, Functions, Objects, and the DOM_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM">Variables, Functions, Objects, and the DOM</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM_Variables">Variables</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM_Functions">Functions</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM_Variable%20Scope">Variable Scope</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM_Objects">Objects</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Variables,%20Functions,%20Objects,%20and%20the%20DOM_Document%20Object%20Model%20(DOM)">Document Object Model (DOM)</a></li></ol></li><li id="ToDo List Web App Continued_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20App%20Continued">ToDo List Web App Continued</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20App%20Continued_Global%20Variables">Global Variables</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20App%20Continued_New%20Task%20Function">New Task Function</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#ToDo%20List%20Web%20App%20Continued_Binding%20Events%20for%20Completed%20Items">Binding Events for Completed Items</a></li></ol></li><li id="Documentation_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation">Documentation</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Operators">Operators</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Conditional%20Statements">Conditional Statements</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Switch%20Statement%20Arguments">Switch Statement Arguments</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Loops">Loops</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Date%20Object">Date Object</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_String%20Object">String Object</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Math%20Object">Math Object</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Navigator%20Object">Navigator Object</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Document%20Object">Document Object</a></li><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Documentation_Dynamic%20Effects">Dynamic Effects</a></li></ol></li><li id="Conclusion_link" class="primary-topic"><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Conclusion">Conclusion</a><ol class="sub-topics"><li><a href="https://sts.doit.wisc.edu/manuals/javascript1/#Conclusion_Next%20Steps">Next Steps</a></li></ol></li></ol><a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link" id="back-to-topics-sticky">Top</a></div>
         </div>
         <!-- BEGIN MAIN CONTENT -->
         <section class="topic">
-            <h1 class="no-top-margin">Introduction</h1>
-            <h2>About this Class</h2>
-            <p>JavaScript is used as a client-side scripting language on many of today&apos;s most popular web sites. It may also be used as a server side programming language using a framework like Node.js. JavaScript extends the basic functionality of HTML and CSS to provide interactive features on a web page. In this class, you will learn some basic JavaScript commands and build a to-do list web application using JavaScript to dynamically alter the appearance of the web page.</p>
-            <h2>Topics</h2>
-            <p>This class will cover the following concepts:</p>
-            <ol>
+            <h1 class="no-top-margin" id="Introduction">Introduction</h1>
+            <h2 id="Introduction_About this Class">About this Class</h2>
+            <p>JavaScript is used as a client-side scripting language on many of today's most popular web sites. It may also be used as a server side programming language using a framework like Node.js. JavaScript extends the basic functionality of HTML and CSS to provide interactive features on a web page. In this class, you will learn some basic JavaScript commands and build a to-do list web application using JavaScript to dynamically alter the appearance of the web page.</p>
+            <h2 id="Introduction_Topics">Topics</h2>
+            <p>After completing this workshop, students should know:</p>
+            <ul>
                 <li>
-                    <p>Introduction to JavaScript</p>
+                    <p>What JavaScript is and how it fits into the overall picture of web development </p>
                 </li>
                 <li>
-                    <p>JavaScript Basics</p>
+                    <p>How JavaScript relates to HTML and CSS </p>
                 </li>
                 <li>
-                    <p>Using JavaScript Objects</p>
+                    <p>How programming is used in web development and UI (User Interface) design </p>
                 </li>
                 <li>
-                    <p>Using the Document Object Model (DOM)</p>
+                    <p>The basic elements of a programming language (e.g. – objects, variables, functions, loops)</p>
                 </li>
-                <li>
-                    <p>Responding to JavaScript Events</p>
+
+<li>
+                    <p>	What the Document Object Model (DOM) is and how JavaScript interacts with it </p>
                 </li>
-            </ol>
-            <h2>Required Skills</h2>
+  
+
+<li>
+                    <p>	What web Application Programming Interfaces are and how they are useful  </p>
+                </li><li>
+                    <p>	The importance of accessibility for web applications and what are the policies by University of Wisconsin regarding this accessibility </p>
+                </li>
+                  
+            </ul>
+
+<p>After completing this workshop, students should be able to:</p>
+
+<ul>
+    <li><p>Incorporate JavaScript into a web page</p></li>
+    <li><p>Make a basic web application</p></li>
+    <li><p>Apply basic programming concepts and syntax without any prior programming experience </p></li>
+    <li><p>	Respond to JavaScript events </p></li>
+    <li><p>	Implement and work with JavaScript objects</p></li>
+
+</ul>
+            <h2 id="Introduction_Required Skills">Required Skills</h2>
             <p>Since JavaScript is used in conjunction with HTML and CSS, this class requires <strong>moderate experience with HTML</strong> and <strong>basic experience with CSS</strong>. If you have taken the <strong>HTML 1</strong> and <strong>CSS 1</strong> classes offered by Software Training for Students, you should meet these requirements.</p>
             <p>Also, familiarity with a programming language or scripting in general is helpful, but not required for this course. JavaScript uses many of the same control structures as other programming languages (PHP, Java, C, C++, etc.) and scripting languages (BASH, etc.), but this will not be a focus of this class.</p>
-            <h2>Other Requirements</h2>
+            <h2 id="Introduction_Other Requirements">Other Requirements</h2>
             <p>We recommend that you use Google Chrome as a web browser, because it has a proper JavaScript console that we can run JavaScript statements in. Other browsers have similar developer tools, but for this class we will use Chrome.</p>
             <p>You will also need a text editor to create JavaScript files, and view the HTML and CSS behind our web site. Example text editors for Mac are Sublime Text 2, TextWrangler, or the default text editor, TextEdit. Example text editors for Windows are SciTE, Notepad++, or the default text editor, Notepad. If you can, use a text editor that has syntax highlighting. It will highlight your code for you, and can make fixing errors a lot easier.</p>
             <p>Pre-made files will be given to you, but if you are working on your own, feel free to navigate to the STS website to download the most recent class files.</p>
-            <h2>Accessibility</h2>
+            <h2 id="Introduction_Accessibility">Accessibility</h2>
             <p>When designing web pages, it is crucial to make pages accessible; that is, viewable by the broadest audience possible. The University of Wisconsin has enacted a web accessibility policy that provides guidelines on how web pages should be written so all users can access them.</p>
             <p>The standard being used is the US Federal Government Standard Section 508. This standard provides a set of rules that, when followed, allow all users to access a web page. The rules are not difficult or intrusive, and obeying them from the start is the easiest way to make accessible pages.</p>
-            <p>This policy applies to all University programs and web pages posted on University servers. If you are writing pages for any University site, they must meet this standard. Even if you aren&apos;t required to meet this standard, you might want to consider it practice and can help to broaden your audience.</p>
+            <p>This policy applies to all University programs and web pages posted on University servers. If you are writing pages for any University site, they must meet this standard. Even if you aren't required to meet this standard, you might want to consider it practice and can help to broaden your audience.</p>
 
-        </section>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <!-- End of Introduction -->
         <!-- Start of Topic 1 -->
         <section class="topic">
-            <h1 class="no-top-margin">Introduction to JavaScript</h1>
-            <p>Today, we will be using JavaScript as a client-side scripting language to provide more interactive features on a web page. Client-side means that the JavaScript commands are run by the web browser on the user&apos;s (client&apos;s) computer. This differs from server-side scripting languages (such as PHP), in which the commands are executed by the web server before the web pages are transferred to the user. Although JavaScript can be used as a server-side programming language, we will only be using it as a client-side scripting language in this class.</p>
-            <h2>JavaScript History</h2>
-            <p>What we know of today as JavaScript was originally written for the Netscape Navigator web browser in the early 1990&apos;s under the name LiveScript. It was rebranded in 1995 with the present name after a deal with Sun Microsystems to also include the Java runtime environment with the Netscape Navigator v2.0 browser.</p>
+            <h1 class="no-top-margin" id="Introduction to JavaScript">Introduction to JavaScript</h1>
+            <p>Today, we will be using JavaScript as a client-side scripting language to provide more interactive features on a web page. Client-side means that the JavaScript commands are run by the web browser on the user's (client's) computer. This differs from server-side scripting languages (such as PHP), in which the commands are executed by the web server before the web pages are transferred to the user. Although JavaScript can be used as a server-side programming language, we will only be using it as a client-side scripting language in this class.</p>
+            <h2 id="Introduction to JavaScript_JavaScript History">JavaScript History</h2>
+            <p>What we know of today as JavaScript was originally written for the Netscape Navigator web browser in the early 1990's under the name LiveScript. It was rebranded in 1995 with the present name after a deal with Sun Microsystems to also include the Java runtime environment with the Netscape Navigator v2.0 browser.</p>
             <p>Although JavaScript sounds similar to Java, the two are unrelated, except for some common syntax inherited from the C programming languages. Java is a full-fledged object-oriented programming (OOP) language, which could take an entire semester class to learn (See Computer Science 302). JavaScript is very simplified for ease of use, meaning you should be able to become proficient in basic statements after this two-hour class.</p>
             <p>Since JavaScript is licensed to the Netscape family of browsers (including Mozilla Firefox among others), Microsoft actually uses a different language, called JScript to implement JavaScript features. There are a few differences between JavaScript and JScript, but in this class, we will consider both as the same.</p>
-            <p>JavaScript is weakly-typed, meaning that declaration of specific variable types is not necessary, but rather it is &quot;figured out&quot; by the context of a variable assignment. JavaScript is also a prototype-based language, which means that instead of pure classes (as in object-oriented programming languages) there are structures called prototypes that allow for customized objects. We will cover more on these concepts later in the class.</p>
-            <h2>Client-Side Scripting</h2>
-            <p>Because JavaScript is a client-side scripting language, the code to be processed is run on the user&apos;s (client&apos;s) computer. This means that it is impossible to &quot;hide&quot; or protect JavaScript code, as it must be readable by the user&apos;s computer to run (just as it is impossible to hide HTML or CSS). By running code locally, it can be much faster to respond to user input, for example in form validation, mouse movement, or graphical effects.</p>
+            <p>JavaScript is weakly-typed, meaning that declaration of specific variable types is not necessary, but rather it is "figured out" by the context of a variable assignment. JavaScript is also a prototype-based language, which means that instead of pure classes (as in object-oriented programming languages) there are structures called prototypes that allow for customized objects. We will cover more on these concepts later in the class.</p>
+            <h2 id="Introduction to JavaScript_Client-Side Scripting">Client-Side Scripting</h2>
+            <p>Because JavaScript is a client-side scripting language, the code to be processed is run on the user's (client's) computer. This means that it is impossible to "hide" or protect JavaScript code, as it must be readable by the user's computer to run (just as it is impossible to hide HTML or CSS). By running code locally, it can be much faster to respond to user input, for example in form validation, mouse movement, or graphical effects.</p>
             <p>JavaScript also has limited rights, including restricting the modification of local files. In practical JavaScript use, you will be limited to modifying the appearance of the current web page only. Any more complex interactions with a computer file system will likely require server-side programming languages, such as PHP.</p>
             <p>Even with its limited rights, there are still several security risks involving JavaScript, most of which related to out-of-date web browsers. To completely protect a computer from malicious attacks, it is often recommended to disable JavaScript. This adds a new level of complexity for web design - web pages should only JavaScript only for extra features. For this reason, we must obey the following guideline:</p>
             <p><strong>Your web page should be fully usable even if JavaScript is disabled to be completely accessible.</strong></p>
             <p>For this reason, it is often imperative to use JavaScript in conjunction with a server-side programming languages for form validation and good web authoring practices in all other cases.</p>
-            <h2>Uses of JavaScript</h2>
+            <h2 id="Introduction to JavaScript_Uses of JavaScript">Uses of JavaScript</h2>
             <p>JavaScript is a prevalent part of current web design practices. Many features of web pages that change based on user input are the result of JavaScript code. Here are a few examples:</p>
             <h3>Lightbox</h3>
-            <p>The original lightbox script (<a href="http://lokeshdhakar.com/projects/lightbox2/">http://lokeshdhakar.com/projects/lightbox2/</a>) displays images in an interactive way, giving the effect of the image floating above the page. Try navigating to the link above, and scrolling down to the &quot;Examples&quot; section. Click on an image in this section to view it.</p>
-            <div class="centered-image-medium"> <img src="images/usesofjavascript-lightbox-1.png" alt="The Golden Gate bridge, showing the use of a lightbox for interactivity"> </div>
+            <p>The original lightbox script (<a href="http://lokeshdhakar.com/projects/lightbox2/">http://lokeshdhakar.com/projects/lightbox2/</a>) displays images in an interactive way, giving the effect of the image floating above the page. Try navigating to the link above, and scrolling down to the "Examples" section. Click on an image in this section to view it.</p>
+            <div class="centered-image-medium"> <img src="./JavaScript 1_upd_files/usesofjavascript-lightbox-1.png" alt="The Golden Gate bridge, showing the use of a lightbox for interactivity"> </div>
             <h3>Parallax</h3>
             <div class="sidebar-note">
                 <h2>jQuery</h2>
                 <p>Parallax, and many of these other examples can be easily used in a webpage using a JavaScript library called jQuery. You will learn more about jQuery in our JavaScript 2 class.</p>
             </div>
             <p>You can use JavaScript to make scrolling through a web page a unique experience. Parallax scrolling is the idea of having the content of your web page scroll faster, or slower, than other elements on your page. Dave Gamache has a nice web page that uses parallax (<a href="http://davegamache.com/parallax/">http://davegamache.com/parallax/</a>).</p>
-            <div class="centered-image-large"> <img src="images/usesofjavascript-parallax-1.png" alt="A forest scene showing elements moving via Javascript"> </div>
+            <div class="centered-image-large"> <img src="./JavaScript 1_upd_files/usesofjavascript-parallax-1.png" alt="A forest scene showing elements moving via Javascript"> </div>
             <h3>Full Screen Forms</h3>
             <p>JavaScript can be used to make filling out forms a simple experience on your web page, by using full screen HTML forms. Full screen forms are used in a demo shown below. (<a href="https://tympanus.net/codrops/2014/07/30/fullscreen-form-interface/">https://tympanus.net/codrops/2014/07/30/fullscreen-form-interface/</a>).</p>
-            <div class="centered-image-medium"> <img src="images/usesofjavascript-fullscreenforms-1.png" alt="Screenshot of a full-screen form created with Javascript"> </div>
+            <div class="centered-image-medium"> <img src="./JavaScript 1_upd_files/usesofjavascript-fullscreenforms-1.png" alt="Screenshot of a full-screen form created with Javascript"> </div>
             <p>Although we will only reach the very basics of these effects in this class, check out the JavaScript 2 class for more practical examples of these JavaScript effects and more.</p>
             <!-- End of Introduction to JavaScript -->
             <!-- Start of JavaScript Basics -->
-        </section>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <section class="topic">
-            <h1 class="no-top-margin">JavaScript Basics</h1>
-            <h2>In-Line Scripting</h2>
+            <h1 class="no-top-margin" id="JavaScript Basics">JavaScript Basics</h1>
+            <h2 id="JavaScript Basics_In-Line Scripting">In-Line Scripting</h2>
             <p>The simplest way to use JavaScript on a web page is very similar to internal style sheets using CSS. Instead of using the &lt;style&gt; tag as in CSS, in-line JavaScript uses the &lt;script&gt; tag to specify JavaScript code. JavaScript commands typically use (but are not required to have) a semicolon after each line.</p>
             <h3>Hello World Script</h3>
             <div class="sidebar-note">
@@ -119,22 +188,22 @@ Good luck, and have fun!
             </div>
             <ol class="instruction-list">
                 <li>
-                    <p>Open the class file folder named &quot;Basics&quot; inside of the &quot;JS1_ClassFiles&quot; folder. </p>
+                    <p>Open the class file folder named "Basics" inside of the "JS1_ClassFiles" folder. </p>
                 </li>
                 <li>
-                    <p>Right Click the file &quot;index.html&quot; and open with a text editor of your choice. </p>
+                    <p>Right Click the file "index.html" and open with a text editor of your choice. </p>
                 </li>
                 <li>
                     <p>Between the script tags, Write the following. </p>
-                    <pre><code>&lt;script type&#61;&quot;text/javascript&quot;&gt;<br>&emsp;&emsp;console.log(&quot;hello world!&quot;)&#59;<br>&lt;/script&gt;</code></pre>
+                    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello world!"</span>);</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
                     <div class="sidebar-note">
                         <h2>Strings</h2>
-                        <p>&quot;String&quot; is the programming term for one or more characters joined together to form text to be displayed, rather than a command or function to be executed.</p>
+                        <p>"String" is the programming term for one or more characters joined together to form text to be displayed, rather than a command or function to be executed.</p>
                     </div>
-                    <p>The console.log() method takes a string-type or number-type argument (between the parentheses) and writes it to the console. You can either use single quotation marks (&apos;) or double quotation marks (&quot;) to specify a string of text. Whatever you use, just be sure to stay consistent. If you are writing a number to the console, do not use quotation marks. </p>
+                    <p>The console.log() method takes a string-type or number-type argument (between the parentheses) and writes it to the console. You can either use single quotation marks (') or double quotation marks (") to specify a string of text. Whatever you use, just be sure to stay consistent. If you are writing a number to the console, do not use quotation marks. </p>
                 </li>
                 <li>
-                    <p>Save the file &quot;index.html&quot;</p>
+                    <p>Save the file "index.html"</p>
                 </li>
                 <li>
                     <p>Open index.html in Google Chrome</p>
@@ -148,10 +217,13 @@ Good luck, and have fun!
                     <p>If you are on a Mac, Use the shortcut: <strong>command-option-J</strong>. If you are on Windows, Use the shortcut: <strong>control-shift-J</strong>. Alternatively, you can Navigate to <strong>View &gt; Developer &gt; JavaScript Console</strong>.</p>
                 </li>
             </ol>
-            <div class="centered-image-large border"> <img src="images/helloworldscript-javascriptconsole-1.png" alt="Screenshot of the Javascript console in the Google Chrome browser"> </div>
+            <div class="centered-image-large border"> <img src="./JavaScript 1_upd_files/helloworldscript-javascriptconsole-1.png" alt="Screenshot of the Javascript console in the Google Chrome browser"> </div>
             <p>You should see hello world printed to the console. Next, we will use the console to run some simple JavaScript commands.</p>
-            <h2>Writing JavaScript to the Console</h2>
-            <p>We can use the JavaScript console in Google Chrome to write and execute JavaScript statements &quot;on the fly&quot;. Next, we will learn about some simple statements we can execute in JavaScript. Using the console to practice these statements is recommended, because it eliminates the issues you might run into saving and refreshing an internal script in your HTML code.</p>
+<p>Below is the illustration of the above activity. </p>
+
+<iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual1upd.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            <h2 id="JavaScript Basics_Writing JavaScript to the Console">Writing JavaScript to the Console</h2>
+            <p>We can use the JavaScript console in Google Chrome to write and execute JavaScript statements "on the fly". Next, we will learn about some simple statements we can execute in JavaScript. Using the console to practice these statements is recommended, because it eliminates the issues you might run into saving and refreshing an internal script in your HTML code.</p>
             <h3>Writing Strings to the Web Page</h3>
             <div class="sidebar-note">
                 <h2>Clearing the Console</h2>
@@ -163,10 +235,10 @@ Good luck, and have fun!
                 </li>
                 <li>
                     <p>Type the following into your JavaScript console.</p>
-                    <pre><code>document.write(&quot;I just wrote to the web page!&quot;);</code></pre> </li>
+                    <pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.write(<span class="hljs-string">"I just wrote to the web page!"</span>);</code></pre> </li>
                 <div class="sidebar-note">
                     <h2>Return Values in the Console</h2>
-                    <p>After you execute a statemnt in the console, you may see &apos;undefined&apos; written below your statement. This is the return value, and we will learn more about these later.</p>
+                    <p>After you execute a statemnt in the console, you may see 'undefined' written below your statement. This is the return value, and we will learn more about these later.</p>
                 </div>
                 <li>
                     <p>Hit Enter to execute the JavaScript statement.</p>
@@ -184,10 +256,10 @@ Good luck, and have fun!
                 </li>
                 <li>
                     <p>Using the arrow keys, Find the statement we typed in the previous exercise. <strong>Do Not</strong> press enter yet.</p>
-                    <pre><code>document.write(&quot;I just wrote to the web page!&quot;);</code></pre>
-                <li>
+                    <pre><code class="hljs javascript"><span class="hljs-built_in">document</span>.write(<span class="hljs-string">"I just wrote to the web page!"</span>);</code></pre>
+                </li><li>
                     <p>Insert HTML h2 tags into the statement.</p>
-                    <pre><code>document.write(&quot;&lt;h2&gt;I just wrote to the web page!&lt;/h2&gt;&quot;);</code></pre> </li>
+                    <pre><code class="hljs xml">document.write("<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>I just wrote to the web page!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>");</code></pre> </li>
                 <li>
                     <p>Press Enter to execute the statement.</p>
                 </li>
@@ -200,7 +272,7 @@ Good luck, and have fun!
                 </li>
                 <li>
                     <p>Type the following into your console.</p>
-                    <pre><code>alert(&quot;Coding is awesome!&quot;);</code></pre> </li>
+                    <pre><code class="hljs php">alert(<span class="hljs-string">"Coding is awesome!"</span>);</code></pre> </li>
                 <div class="sidebar-note">
                     <h2>Modal Windows</h2>
                     <p>Alert dialog boxes prevent the user from accessing the rest of the web page until the alert is closed. They can be a bit intrusive, so be careful no to overuse them.</p>
@@ -210,7 +282,7 @@ Good luck, and have fun!
                 </li>
             </ol>
             <p>You should see a pop up window that displays the String argument typed above. It should look something like the image below.</p>
-            <div class="centered-image-large border"> <img src="images/displayingapopupalert-alertdialog-1.png" alt="A screenshot of a popup alert with the text Coding is awesome!"> </div>
+            <div class="centered-image-large border"> <img src="./JavaScript 1_upd_files/displayingapopupalert-alertdialog-1.png" alt="A screenshot of a popup alert with the text Coding is awesome!"> </div>
             <h3>Basic Math</h3>
             <ol class="instruction-list">
                 <li>
@@ -243,78 +315,82 @@ Good luck, and have fun!
                 </li>
                 <li>
                     <p>Type the following into your console.</p>
-                    <pre><code>(48%13)/2</code></pre> </li>
+                    <pre><code class="hljs shell"><span class="hljs-meta">(48%</span><span class="bash">13)/2</span></code></pre> </li>
                 <li>
                     <p>Hit Enter.</p>
                     <p>You should get a result of 4.5 because 48%13 = 9 and 9/2 = 4.5</p>
                 </li>
             </ol>
-        </section>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <!-- End of JavaScript Basics -->
         <!-- Start of ToDo List Web Application -->
         <section class="topic">
-            <h1 class="no-top-margin">ToDo List Web Application</h1>
-            <p>For the rest of this class, we will build a ToDo list &apos;web application&apos;. This web application will not have any back-end, or server side functionality. All this means is that if we refresh our page, all of our changes to the ToDo list will be lost. All of the functionality will be implemented using JavaScript. We will not use any other libraries or languages. A ToDo list web application, like this one, could be made quicker with a JavaScript library like jQuery, but that will not be covered in this course. If you would like to learn more about jQuery, we recommend that you take the JavaScript 2 course offered by STS.</p>
-            <h2>The Finished Product</h2>
+            <h1 class="no-top-margin" id="ToDo List Web Application">ToDo List Web Application</h1>
+            <p>For the rest of this class, we will build a ToDo list 'web application'. This web application will not have any back-end, or server side functionality. All this means is that if we refresh our page, all of our changes to the ToDo list will be lost. All of the functionality will be implemented using JavaScript. We will not use any other libraries or languages. A ToDo list web application, like this one, could be made quicker with a JavaScript library like jQuery, but that will not be covered in this course. If you would like to learn more about jQuery, we recommend that you take the JavaScript 2 course offered by STS.</p>
+            <h2 id="ToDo List Web Application_The Finished Product">The Finished Product</h2>
             <p>A finished version of the ToDo list web application is given to you in the class files.</p>
             <h3>Viewing in the Browser</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Close the previous window containing &quot;index.html&quot;, if you have not done so already.</p>
+                    <p>Close the previous window containing "index.html", if you have not done so already.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;JS1_ClassFiles&quot; folder.</p>
+                    <p>Open the "JS1_ClassFiles" folder.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;Finished_ToDo&quot; folder.</p>
-                    <p>Observe how the finished web application is laid out, with an &quot;index.html&quot; page in the root folder, along with folders containing any JavaScript files and CSS files named &quot;js&quot; and &quot;css&quot;, respectively.</p>
+                    <p>Open the "Finished_ToDo" folder.</p>
+                    <p>Observe how the finished web application is laid out, with an "index.html" page in the root folder, along with folders containing any JavaScript files and CSS files named "js" and "css", respectively.</p>
                 </li>
                 <li>
-                    <p>Right-Click &quot;index.html&quot; and open with Google Chrome.</p>
+                    <p>Right-Click "index.html" and open with Google Chrome.</p>
                 </li>
                 <li>
                     <p>Click on the different buttons and input elements on the web page, and experiment to learn how it works.</p>
                 </li>
                 <li>
-                    <p>Add a few items to your ToDo list by using the &quot;ADD ITEM&quot; text field.</p>
+                    <p>Add a few items to your ToDo list by using the "ADD ITEM" text field.</p>
                 </li>
                 <li>
                     <p>Refresh the browser window, and view the changes.</p>
                 </li>
             </ol>
-            <p>You should lose all changes you just made. Once again, this is because our &apos;web application&apos; has no back-end or server side code. If you would like to learn more about server-side programming, feel free to take the PHP and MySQL classes offered by STS.</p>
+            <p>You should lose all changes you just made. Once again, this is because our 'web application' has no back-end or server side code. If you would like to learn more about server-side programming, feel free to take the PHP and MySQL classes offered by STS.</p>
+
+<p>Below is the final web application we will be completing in this workshop</p>
+
+<iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual2.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
             <h3>Viewing the JavaScript Code</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Open the &quot;JS1_ClassFiles&quot; folder.</p>
+                    <p>Open the "JS1_ClassFiles" folder.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;Finished_ToDo&quot; folder.</p>
+                    <p>Open the "Finished_ToDo" folder.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;js&quot; folder containing the JavaScript file named &quot;app.js&quot;.</p>
+                    <p>Open the "js" folder containing the JavaScript file named "app.js".</p>
                 </li>
                 <li>
-                    <p>Right-Click &quot;app.js&quot; and Open With a text editor of your choice.</p>
+                    <p>Right-Click "app.js" and Open With a text editor of your choice.</p>
                 </li>
             </ol>
-            <p>The JavaScript file is broken up into three sections. There are global variables, functions, and the point where the JavaScript will start executing. When the browser reads our JavaScript file, it will start actually running our code at the &quot;Execution Start&quot; section. The global variables, and functions are just there for code to be referenced as the JavaScript runs. Just realize that the browser will create the global variables, and the functions, but will not do anything if we do not use these variables and functions. The idea of having global variables, and functions at the top of our JavaScript file is common, and thought of as a best-practice technique. If you are confused by any of this, do not worry, we will go over most of this as we work through the course.</p>
-            <h2>Intro to Building the Application</h2>
+            <p>The JavaScript file is broken up into three sections. There are global variables, functions, and the point where the JavaScript will start executing. When the browser reads our JavaScript file, it will start actually running our code at the "Execution Start" section. The global variables, and functions are just there for code to be referenced as the JavaScript runs. Just realize that the browser will create the global variables, and the functions, but will not do anything if we do not use these variables and functions. The idea of having global variables, and functions at the top of our JavaScript file is common, and thought of as a best-practice technique. If you are confused by any of this, do not worry, we will go over most of this as we work through the course.</p>
+            <h2 id="ToDo List Web Application_Intro to Building the Application">Intro to Building the Application</h2>
             <p>Next, we will work on the incomplete web application. The end goal of this class is to have a working ToDo list web application. There are a few steps that we will have to go through, but we can start out by linking our JavaScript file with our HTML page.</p>
             <h3>External Scripting and Linking</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Close &quot;app.js&quot;, if you still have it open.</p>
+                    <p>Close "app.js", if you still have it open.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;JS1_ClassFiles&quot; folder.</p>
+                    <p>Open the "JS1_ClassFiles" folder.</p>
                 </li>
                 <li>
-                    <p>Open the &quot;ToDo&quot; folder.</p>
-                    <p>For the remainder of the class, we will assume that you are working within this folder&#59; the &quot;ToDo&quot; folder. </p>
+                    <p>Open the "ToDo" folder.</p>
+                    <p>For the remainder of the class, we will assume that you are working within this folder; the "ToDo" folder. </p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome</p>
+                    <p>Open "index.html" in Google Chrome</p>
                 </li>
                 <div class="sidebar-note">
                     <h2>Attaching External JavaScript</h2>
@@ -322,88 +398,94 @@ Good luck, and have fun!
                 </div>
                 <li>
                     <p>Try Clicking on the buttons on your web page.</p>
-                    <p>None of the buttons are working! This is because we did not link our &quot;index.html&quot; file with our &quot;app.js&quot; file. Let&apos;s do that now.</p>
+                    <p>None of the buttons are working! This is because we did not link our "index.html" file with our "app.js" file. Let's do that now.</p>
                 </li>
                 <li>
                     <p>Navigate back to your file window.</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in a text editor of your choice.</p>
+                    <p>Open "index.html" in a text editor of your choice.</p>
                 </li>
                 <li>
                     <p>Scroll Down towards the bottom of the HTML document. There should be an area that says:</p>
-                    <pre><code>&lt;!-- external JavaScript link goes here --&gt;</code></pre>
+                    <pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- external JavaScript link goes here --&gt;</span></code></pre>
                     <p>This is the syntax for an HTML comment. HTML comments are useful to mark important areas in your HTML document, and are not executed by the browser.</p>
                 </li>
                 <li>
                     <p>Type the following directly below the comment.</p>
-                    <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;</code></pre>
+                    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/app.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
                     <p>This is another way of linking to a JavaScript file, called external linking. We can write JavaScript code in a separate file (saved with a .js extension), and then we can execute JavaScript anywhere in our HTML file by linking to the external JavaScript file. This is usually more readable than internal scripting that we saw earlier in the course.</p>
                 </li>
                 <li>
-                    <p>Save the &quot;index.html&quot; file, and Open it in Google Chrome.</p>
+                    <p>Save the "index.html" file, and Open it in Google Chrome.</p>
                 </li>
             </ol>
-            <p>You might notice that nothing really happened. There are some errors in our JavaScript file! Let&apos;s check out the JavaScript console for more information.</p>
+            <p>You might notice that nothing really happened. There are some errors in our JavaScript file! Let's check out the JavaScript console for more information.</p>
             <h3>Debugging</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Open the JavaScript console in Google Chrome for the &quot;index.html&quot; ToDo list web application page.</p>
+                    <p>Open the JavaScript console in Google Chrome for the "index.html" ToDo list web application page.</p>
                     <p>Remember, on a Mac, use <strong>command-option-J</strong> to open the JavaScript console. On Windows, use <strong>control-shift-J</strong>. You should see some red statements with errors.</p>
                 </li>
                 <li>
-                    <p>In Google Chrome&apos;s JavaScript console, Click on the gray, drop down arrow to the left of the error statement to see more information.</p>
+                    <p>In Google Chrome's JavaScript console, Click on the gray, drop down arrow to the left of the error statement to see more information.</p>
                     <p>It should say (anonymous function). We will learn more about functions later, so do not worry about it now. Just remember that the drop down arrow can give you more information that can be useful in finding what exactly went wrong in your code. On the right side of the error, Chrome lists the line that the error took place at.</p>
                 </li>
                 <li>
                     <p>Click the link that displays the line number. This link is on the right side of the error.</p>
                 </li>
             </ol>
-            <div class="centered-image-large border"> <img src="images/debugging-uncaughtreferenceerror-1.png" alt="Screenshot of an error in the Javascript console, showing the line number of the error"> </div>
-            <p>The JavaScript console will take you to the JavaScript code that had thrown an error. Now that we&apos;ve found the error, we need to fix it. This process of finding errors and fixing them is common in most programming languages, and is called &quot;debugging&quot;. Keep in mind that in JavaScript, you usually need to open the JavaScript console in order to find errors in your code. If there is an error in your JavaScript code, the rest of the JavaScript code (from the error to the end of the script) will not run. Before we fix these errors, we need a little more background about JavaScript.</p>
-        </section>
+            <div class="centered-image-large border"> <img src="./JavaScript 1_upd_files/debugging-uncaughtreferenceerror-1.png" alt="Screenshot of an error in the Javascript console, showing the line number of the error"> </div>
+            <p>The JavaScript console will take you to the JavaScript code that had thrown an error. Now that we've found the error, we need to fix it. This process of finding errors and fixing them is common in most programming languages, and is called "debugging". Keep in mind that in JavaScript, you usually need to open the JavaScript console in order to find errors in your code. If there is an error in your JavaScript code, the rest of the JavaScript code (from the error to the end of the script) will not run. Before we fix these errors, we need a little more background about JavaScript.</p>
+
+<p>All the files are set in the replit plugin below. You can edit and play around with the code here and click on run to see the output</p>
+
+<iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual3.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <!-- End of ToDo List Web Application -->
         <!-- Start of Variables, Functions, Objects, and the DOM -->
         <section class="topic">
-            <h1 class="no-top-margin">Variables, Functions, Objects, and the DOM</h1>
+            <h1 class="no-top-margin" id="Variables, Functions, Objects, and the DOM">Variables, Functions, Objects, and the DOM</h1>
             <p>For the remainder of the class, we will be creating and storing objects into variables so users of our web application can dynamically interact with their ToDo lists. We access objects on our HTML page through JavaScript by using the Document Object Model (DOM).</p>
-            <h2>Variables</h2>
+            <h2 id="Variables, Functions, Objects, and the DOM_Variables">Variables</h2>
             <div class="sidebar-note">
                 <h2>Declaring Variables</h2>
-                <p>Always put the &quot;var&quot; keyword in your variable declarations. This will reduce errors in your code.</p>
+                <p>Always put the "var" keyword in your variable declarations. This will reduce errors in your code.</p>
             </div>
-            <p>A variable can be thought of as a box that contains some sort of information. For example, you could look inside the box and see what&apos;s inside, or you could change what is stored in the box. In JavaScript, you should think of a variable as a box that holds a value. If you decide to store something into a variable, this process is called &quot;assigning&quot; a variable. It would be similar to storing something into an empty box. If you have the name of a variable, you can easily read the value stored in that variable by simply using the name wherever you need the value.</p>
+            <p>A variable can be thought of as a box that contains some sort of information. For example, you could look inside the box and see what's inside, or you could change what is stored in the box. In JavaScript, you should think of a variable as a box that holds a value. If you decide to store something into a variable, this process is called "assigning" a variable. It would be similar to storing something into an empty box. If you have the name of a variable, you can easily read the value stored in that variable by simply using the name wherever you need the value.</p>
             <p>In JavaScript we can declare variables using the following syntax,</p>
-            <pre><code>var variableName&#59;</code></pre>
-            <p>where &quot;var&quot; is a special keyword that denotes a variable, and &quot;variableName&quot; is whatever you choose to name the variable. There are some restrictions as to what you can name your variables. Good reference for this information and reference for JavaScript in general can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>).</p>
+            <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName;</code></pre>
+            <p>where "var" is a special keyword that denotes a variable, and "variableName" is whatever you choose to name the variable. There are some restrictions as to what you can name your variables. Good reference for this information and reference for JavaScript in general can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>).</p>
             <p>If you would like to store a value into the variable, you can do so on the same line by using the following syntax,</p>
-            <pre><code>var variableName = some value here&#59;</code></pre>
-            <p>where &quot;some value here&quot; could be a string, number, or object.</p>
+            <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName = some value here;</code></pre>
+            <p>where "some value here" could be a string, number, or object.</p>
             <p>You can declare and assign variables on separate lines as well. Use the following syntax.</p>
-            <pre><code>var variableName&#59;<br>variableName = some value here&#59;</code></pre>
+            <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName;<br>variableName = some value here;</code></pre>
             <p>This syntax works in the same way as the single line declaration and assignment seen above.</p>
-            <p>Keep in mind that in JavaScript, variables are case-sensitive. This means variables named &quot;message&quot;, &quot;Message&quot;, and &quot;MESSAGE&quot; could all represent different things. Also, since JavaScript is a loosely-typed language, variables can be assigned any type of data with one general statement.</p>
-            <h2>Functions</h2>
-            <p>Functions in JavaScript are used to reduce redundancy in your code. It is a good idea to follow the DRY (don&apos;t repeat yourself) programming principle when writing JavaScript. This means that any duplicated JavaScript code should probably be put into a function. Wherever you use that code, you may call that function.</p>
+            <p>Keep in mind that in JavaScript, variables are case-sensitive. This means variables named "message", "Message", and "MESSAGE" could all represent different things. Also, since JavaScript is a loosely-typed language, variables can be assigned any type of data with one general statement.</p>
+            <h2 id="Variables, Functions, Objects, and the DOM_Functions">Functions</h2>
+            <p>Functions in JavaScript are used to reduce redundancy in your code. It is a good idea to follow the DRY (don't repeat yourself) programming principle when writing JavaScript. This means that any duplicated JavaScript code should probably be put into a function. Wherever you use that code, you may call that function.</p>
             <p>A common way to create a function in JavaScript can be done using the following syntax.</p>
-            <pre><code>var myFunctionName = function() {<br>&emsp;&emsp;// repeatable code goes here!<br>}</code></pre>
+            <pre><code class="hljs php"><span class="hljs-keyword">var</span> myFunctionName = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">}</span></code></pre>
             <p>This way of creating a function and storing it into a variable is common in JavaScript. If you want to call the function we declared above, use the following syntax.</p>
-            <pre><code>myFunctionName()&#59;</code></pre>
+            <pre><code class="hljs">myFunctionName();</code></pre>
             <p>Call the function wherever you need to repeat the code that is inside of the function declaration.</p>
             <p>There is another way to declare functions in JavaScript using the following syntax. However, in the exercises in this class, we will only use the declaration shown before for our functions.</p>
-            <pre><code>function myFunctionName() {<br>&emsp;&emsp;// repeatable code goes here!<br>}</code></pre>
+            <pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunctionName</span><span class="hljs-params">()</span> </span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">}</span></code></pre>
             <p>Calling a function declared like the function above, is the same as before.</p>
-            <p>&quot;function&quot; is a keyword in JavaScript and always has to be used when declaring a function. You may add arguments to the function declaration between the parenthesis, and you may also return values from the function. Below is an example function declaration and function call that takes two numbers, adds them together, and stores them in a variable named &quot;result&quot;.</p>
-            <pre><code>var addNumbers = function(num1, num2) {<br>&emsp;&emsp;return num1+num2&#59;<br>}<br>var result = addNumbers(4,5)&#59;</code></pre>
-            <p>In this example, &quot;result&quot; should hold the integer 9.</p>
-            <h2>Variable Scope</h2>
-            <p>Variables in JavaScript have functional scoping. Scoping is a concept that describes where declared variables can be &quot;seen&quot;. If you declare a variable at the top of a script file, it can be &quot;seen&quot; and used throughout the whole script. If you declare a variable within a function, it can only be seen and used within that function. This can be problematic sometimes because it is possible to accidentally write new values to existing variables.</p>
-            <p>Just be sure that whenever you declare a variable, you always use the &quot;var&quot; keyword. This will reduce errors in your code. Also, a good rule of thumb is to declare any variables that you will use throughout the whole script at the top of your JavaScript file, and declare any variables that you will use within certain functions at the top of the function declaration.</p>
-            <h2>Objects</h2>
-            <p>Objects in JavaScript represent something that has properties and methods. You can think of an object like a car. Properties of a car would be make, model, year, and more. Some methods that the car would have could be drive, play radio, lock doors, and more. We use objects in JavaScript and other languages. Some common objects in JavaScript are the Math object, Date object, and most importantly, the Window object. Documentation on these objects can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>).</p>
-            <h2>Document Object Model (DOM)</h2>
+            <p>"function" is a keyword in JavaScript and always has to be used when declaring a function. You may add arguments to the function declaration between the parenthesis, and you may also return values from the function. Below is an example function declaration and function call that takes two numbers, adds them together, and stores them in a variable named "result".</p>
+            <pre><code class="hljs php"><span class="hljs-keyword">var</span> addNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(num1, num2)</span> </span>{<br>  <span class="hljs-keyword">return</span> num1+num2;<br>}<br><span class="hljs-keyword">var</span> result = addNumbers(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>);</code></pre>
+            <p>In this example, "result" should hold the integer 9.</p>
+
+<iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual4.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+            <h2 id="Variables, Functions, Objects, and the DOM_Variable Scope">Variable Scope</h2>
+            <p>Variables in JavaScript have functional scoping. Scoping is a concept that describes where declared variables can be "seen". If you declare a variable at the top of a script file, it can be "seen" and used throughout the whole script. If you declare a variable within a function, it can only be seen and used within that function. This can be problematic sometimes because it is possible to accidentally write new values to existing variables.</p>
+            <p>Just be sure that whenever you declare a variable, you always use the "var" keyword. This will reduce errors in your code. Also, a good rule of thumb is to declare any variables that you will use throughout the whole script at the top of your JavaScript file, and declare any variables that you will use within certain functions at the top of the function declaration.</p>
+            <h2 id="Variables, Functions, Objects, and the DOM_Objects">Objects</h2>
+            <p>Objects in JavaScript represent something that has properties and methods. You can think of an object like a car. Properties of a car would be make, model, year, and more. Some methods that the car would have could be drive, play radio, lock doors, and more. We use objects in JavaScript and other languages. Some common objects in JavaScript are the Math object, Date object, and most importantly, the Window object. Documentation on these objects can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>).</p>
+            <h2 id="Variables, Functions, Objects, and the DOM_Document Object Model (DOM)">Document Object Model (DOM)</h2>
             <p>The DOM is a web Application Programming Interface (API) that allows access to and modification of the current HTML document being displayed. You can think of the DOM as a virtual representation of the entire web page, including the browser that the HTML is being viewed in.</p>
-<img class="center" src="images/dom-graphic.png" alt="A Visual representation of the structure of the DOM, or Document Object Model">
+<img class="center" src="./JavaScript 1_upd_files/dom-graphic.png" alt="A Visual representation of the structure of the DOM, or Document Object Model">
             <p>The DOM contains the following objects.</p>
             <ul>
                 <li>
@@ -413,43 +495,43 @@ Good luck, and have fun!
                     <p><strong>Window:</strong> A representation of the instance of the browser window. It can be used to move, re size, or otherwise affect the entire browser window. The <span class="type-text">alert()</span> function is a part of the window object. The Document object is a property of the Window object and can be accessed by typing <span class="type-text">Window.document</span>. It is usually shortened to just <span class="type-text">document</span>, however.</p>
                 </li>
                 <li>
-                    <p><strong>Navigator:</strong> A representation of the specific browser program used to view the web page. It contains information like the browser&apos;s name, version, language, and other properties.</p>
+                    <p><strong>Navigator:</strong> A representation of the specific browser program used to view the web page. It contains information like the browser's name, version, language, and other properties.</p>
                 </li>
                 <li>
-                    <p><strong>Screen:</strong> A representation of the computer&apos;s monitor. It contains information like the screen resolution and number of colors.</p>
+                    <p><strong>Screen:</strong> A representation of the computer's monitor. It contains information like the screen resolution and number of colors.</p>
                 </li>
                 <li>
-                    <p><strong>History:</strong> A representation of the browser&apos;s history. It can be used to command a browser to go forward or back through the list of visited web pages.</p>
+                    <p><strong>History:</strong> A representation of the browser's history. It can be used to command a browser to go forward or back through the list of visited web pages.</p>
                 </li>
                 <li>
                     <p><strong>Location:</strong> A representation of the current web site URL or address. It can be used to redirect the browser to a new web site.</p>
                 </li>
             </ul>
-        </section>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <!-- End of Variables, Functions, Objects, and the DOM -->
         <!-- Start of ToDo List Web App Continued -->
         <section class="topic">
-            <h1 class="no-top-margin">ToDo List Web App Continued</h1>
-            <p>For the remainder of the class, we will work towards finishing the ToDo list web application. Remember, the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>) is a good reference for the many things you can do with the DOM, and with JavaScript in general.</p>
-            <h2>Global Variables</h2>
+            <h1 class="no-top-margin" id="ToDo List Web App Continued">ToDo List Web App Continued</h1>
+            <p>For the remainder of the class, we will work towards finishing the ToDo list web application. Remember, the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>) is a good reference for the many things you can do with the DOM, and with JavaScript in general.</p>
+            <h2 id="ToDo List Web App Continued_Global Variables">Global Variables</h2>
             <p>To fix the error that was displayed in the section before, we need to assign some global variables in our JavaScript code. Global variables are simply variables that can be seen by your entire program, or script. They can be used on any line of your script and changed on any line of your script. In the next exercise, you will assign global variables that represent parts of your HTML page. By assigning these variables, we are able to connect objects in our HTML page to our JavaScript code.</p>
             <h3>Incomplete Tasks Holder Variable</h3>
-            <p>The previous &quot;Uncaught ReferenceError&quot; you saw in the console can be fixed by a simple assignment of a global variable.</p>
+            <p>The previous "Uncaught ReferenceError" you saw in the console can be fixed by a simple assignment of a global variable.</p>
             <ol class="instruction-list">
                 <li>
-                    <p>Open the &quot;js&quot; folder.</p>
+                    <p>Open the "js" folder.</p>
                 </li>
                 <li>
-                    <p>Open &quot;app.js&quot; in the text editor of your choice.</p>
+                    <p>Open "app.js" in the text editor of your choice.</p>
                 </li>
                 <li>
                     <p>In the Global Variables section (between the rows of comment slashes), towards the top of the file, Type the following.</p>
-                    <pre><code>var incompleteTasksHolder = document.getElementById(&quot;incomplete-tasks&quot;);</code></pre> </li>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> incompleteTasksHolder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"incomplete-tasks"</span>);</code></pre> </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Right-click &quot;index.html&quot; and Open With Google Chrome to view the changes.</p>
+                    <p>Right-click "index.html" and Open With Google Chrome to view the changes.</p>
                 </li>
                 <li>
                     <p>Click the Edit or Save buttons for the items in the TODO section of the web application, and view their functionality. Try changing the name of one of the items.</p>
@@ -458,15 +540,15 @@ Good luck, and have fun!
                     <p>Click the Delete button for the items in the TODO section of the web application, and view the functionality.</p>
                 </li>
             </ol>
-            <p>In the code you wrote above, we created a variable named &lt;incompleteTasksHolder&gt; and stored the TODO section unordered list, &lt;ul&gt;, element object into the variable. Every item under the TODO section of the web application is a list item. We used the DOM to access this HTML element, by getting the element from the document with the id of &quot;incomplete-tasks&quot;. Check out the HTML code for the web application, and you will see that the &lt;ul&gt; element under the TODO section has an id=&quot;incomplete-tasks&quot;. The getElementById method is a method of the document object. We call this method using &quot;dot notation&quot;, and pass it an argument of the id of the element we want.</p>
+            <p>In the code you wrote above, we created a variable named &lt;incompleteTasksHolder&gt; and stored the TODO section unordered list, &lt;ul&gt;, element object into the variable. Every item under the TODO section of the web application is a list item. We used the DOM to access this HTML element, by getting the element from the document with the id of "incomplete-tasks". Check out the HTML code for the web application, and you will see that the &lt;ul&gt; element under the TODO section has an id="incomplete-tasks". The getElementById method is a method of the document object. We call this method using "dot notation", and pass it an argument of the id of the element we want.</p>
             <h3>Completed Tasks Variable Holder</h3>
             <p>We will need a variable that stores the unordered list under the COMPLETED section of the web application. List items in this unordered list are displayed with a line through them using CSS. All we need to worry about is creating the variable.</p>
             <ol class="instruction-list">
                 <li>
                     <p>In the Global Variables section, towards the top of the file, Type the following.</p>
-                    <pre><code>var completedTasksHolder = document.getElementById(&quot;completed-tasks&quot;);</code></pre> </li>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> completedTasksHolder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"completed-tasks"</span>);</code></pre> </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
             <h3>New Task Input Text Field Variable</h3>
@@ -474,39 +556,41 @@ Good luck, and have fun!
             <ol class="instruction-list">
                 <li>
                     <p>In the Global Variables section, towards the top of the file, Type the following.</p>
-                    <pre><code>var taskInput = document.getElementById(&quot;new-task&quot;);</code></pre> </li>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> taskInput = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"new-task"</span>);</code></pre> </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
             <h3>Add Button Variable</h3>
-            <p>We need to store the &quot;Add&quot; button under the ADD ITEM section of the web application into a variable. The following steps outline how to do so.</p>
+            <p>We need to store the "Add" button under the ADD ITEM section of the web application into a variable. The following steps outline how to do so.</p>
             <ol class="instruction-list">
                 <li>
                     <p>In the Global Variables section, towards the top of the file, Type the following.</p>
-                    <pre><code>var addButton = document.getElementsByTagName(&quot;button&quot;)[0];</code></pre> </li>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addButton = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"button"</span>)[<span class="hljs-number">0</span>];</code></pre> </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
-            <p>You may notice that the assignment of this variable is done a bit differently. We used the DOM to get a &quot;collection&quot; of elements. Because the method call returns a collection, we can get the first element in the collection by adding [0] to the end of the method call. Looking at the whole method, we get all button tags on our document, and then assign the very first button found to the variable named &quot;addButton&quot;.</p>
-            <h2>New Task Function</h2>
-            <p>We need to write the code for what happens when we click the &quot;Add&quot; button under the ADD ITEM section. We will store this function into a variable so we can use it where we need to.</p>
+            <p>You may notice that the assignment of this variable is done a bit differently. We used the DOM to get a "collection" of elements. Because the method call returns a collection, we can get the first element in the collection by adding [0] to the end of the method call. Looking at the whole method, we get all button tags on our document, and then assign the very first button found to the variable named "addButton".</p>
+            <h2 id="ToDo List Web App Continued_New Task Function">New Task Function</h2>
+            <iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual5.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>We need to write the code for what happens when we click the "Add" button under the ADD ITEM section. We will store this function into a variable so we can use it where we need to.</p>
             <h3>Creating the Function</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Scroll Down to the &quot;Functions&quot; section of the JavaScript Code.</p>
+                    <p>Scroll Down to the "Functions" section of the JavaScript Code.</p>
                 </li>
                 <li>
-                    <p>Find the comment that says &quot;add a new task&quot;.</p>
+                    <p>Find the comment that says "add a new task".</p>
                 </li>
                 <li>
                     <p>Below the comment, Type the following.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;);<br>}</code></pre>
-                    <p>In the code above, we create a function that takes no parameters, and logs &quot;add task...&quot; to the console. By writing what&apos;s going on in the console, it will help us later if we run into any errors, or &quot;bugs&quot;. We will add more to this function next.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>}</code></pre>
+                    <p>In the code above, we create a function that takes no parameters, and logs "add task..." to the console. By writing what's going on in the console, it will help us later if we run into any errors, or "bugs". We will add more to this function next.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
             <h3>Conditional Statements</h3>
@@ -514,53 +598,55 @@ Good luck, and have fun!
             <ol class="instruction-list">
                 <li>
                     <p>Inside of the addTask function, Add an if-else statement. Make your code look similar to the code below.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;)&#59;<br>&emsp;&emsp;if (taskInput.value !== &quot;&quot;) {<br><br>&emsp;&emsp;}<br>&emsp;&emsp;else {<br>&emsp;&emsp;&emsp;&emsp;alert(&quot;please enter a ToDo item&quot;)&#59;<br>&emsp;&emsp;}<br>}</code></pre>
-                    <p>In the code above, dot notation is used to get the value of what is typed into the text input under the ADD ITEM section. If there is something typed into the field, the code will enter the if statement. If there is nothing typed into the field, it will alert the user. This is called control flow in programming. Documentation on control flow can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>).</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>  <span class="hljs-keyword">if</span> (taskInput.value !== <span class="hljs-string">""</span>) {<br><br>  }<br>  <span class="hljs-keyword">else</span> {<br>    alert(<span class="hljs-string">"please enter a ToDo item"</span>);<br>  }<br>}</code></pre>
+                    <p>In the code above, dot notation is used to get the value of what is typed into the text input under the ADD ITEM section. If there is something typed into the field, the code will enter the if statement. If there is nothing typed into the field, it will alert the user. This is called control flow in programming. Documentation on control flow can be found on the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>).</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and see if the alert works.</p>
+                    <p>Open "index.html" in Google Chrome, and see if the alert works.</p>
                 </li>
             </ol>
-            <p>You may notice that if we press the &quot;Add&quot; button, it does not do anything. In order to call this function when the &quot;Add&quot; button is pressed, we need to use events in JavaScript. We will link the function to the button in the following exercise.</p>
+            <p>You may notice that if we press the "Add" button, it does not do anything. In order to call this function when the "Add" button is pressed, we need to use events in JavaScript. We will link the function to the button in the following exercise.</p>
             <h3>Adding an Event Listener</h3>
             <div class="sidebar-note">
                 <h2>Good Practice</h2>
                 <p>Generally, using the addEventListener() method is the best way to add listeners for events. There are other ways to set event listeners, but this is currently the best way.</p>
             </div>
-            <p>Events in JavaScript refer to when users click, scroll, mouse over, or interact in other ways with certain elements on the page. Right now, nothing happens when we press the &quot;Add&quot; button, because we have are not currently &quot;listening&quot; for any events. We would like to respond to a click event on the &quot;Add&quot; button. Follow the steps below to do so.</p>
+            <p>Events in JavaScript refer to when users click, scroll, mouse over, or interact in other ways with certain elements on the page. Right now, nothing happens when we press the "Add" button, because we have are not currently "listening" for any events. We would like to respond to a click event on the "Add" button. Follow the steps below to do so.</p>
             <ol class="instruction-list">
                 <li>
-                    <p>Scroll Down to the section that has the &quot;Execution Start&quot; comment.</p>
+                    <p>Scroll Down to the section that has the "Execution Start" comment.</p>
                 </li>
                 <li>
-                    <p>Find the comment that says &quot;set the click handler to the addTask function&quot;.</p>
+                    <p>Find the comment that says "set the click handler to the addTask function".</p>
                 </li>
                 <li>
                     <p>Below the comment, Type the following.</p>
-                    <pre><code>addButton.addEventListener(&quot;click&quot;, addTask)&#59;</code></pre>
-                    <p>This method takes in two parameters. The first parameter is the event that you would like to listen for, stated as a string. In this case, we want to listen for anytime a &quot;click&quot; occurs on the &quot;Add&quot; button. The next parameter passed into the method call is the function that we want to run if this event actually happens. By writing this code, it acts as a link between the &quot;addTask&quot; function and the &quot;Add&quot; button.</p>
+                    <pre><code class="hljs php">addButton.addEventListener(<span class="hljs-string">"click"</span>, addTask);</code></pre>
+                    <p>This method takes in two parameters. The first parameter is the event that you would like to listen for, stated as a string. In this case, we want to listen for anytime a "click" occurs on the "Add" button. The next parameter passed into the method call is the function that we want to run if this event actually happens. By writing this code, it acts as a link between the "addTask" function and the "Add" button.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view the changes.</p>
+                    <p>Open "index.html" in Google Chrome, and view the changes.</p>
                 </li>
             </ol>
-            <p>If the &quot;Add&quot; button is pressed without anything entered into the text field next to it, then our web application should display an alert. If there is something entered into the text field, and the &quot;Add&quot; button is pressed, it should not do anything. Next, we will write the code to handle what happens when a ToDo item is actually added.</p>
+            <p>If the "Add" button is pressed without anything entered into the text field next to it, then our web application should display an alert. If there is something entered into the text field, and the "Add" button is pressed, it should not do anything. Next, we will write the code to handle what happens when a ToDo item is actually added.</p><iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual6.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+
             <h3>Creating the New List Item</h3>
-            <p>When the user clicks the &quot;Add&quot; button, a new list item containing a checkbox, buttons and more needs to be created. A function that creates this list item is given to you, but we need to call it in our function to create the new ToDo item.</p>
+            <p>When the user clicks the "Add" button, a new list item containing a checkbox, buttons and more needs to be created. A function that creates this list item is given to you, but we need to call it in our function to create the new ToDo item.</p>
             <ol class="instruction-list">
                 <li>
                     <p>Inside of the addTask function, Declare a new variable that holds the new list item. Make your code look similar to the code below.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;)&#59;<br>&emsp;&emsp;if (taskInput.value !== &quot;&quot;) {<br>&emsp;&emsp;&emsp;&emsp;var listItem = createNewTaskElement(taskInput.value);<br>&emsp;&emsp;}<br>&emsp;&emsp;else {<br>&emsp;&emsp;&emsp;&emsp;alert(&quot;please enter a ToDo item&quot;)&#59;<br>&emsp;&emsp;}<br>}</code></pre>
-                    <p>In the code above, the function named &quot;createNewTaskElement&quot; is called with a parameter passed into it containing the input fields value. Check out the &quot;createNewTaskElement&quot; function to further understand how everything is created.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>  <span class="hljs-keyword">if</span> (taskInput.value !== <span class="hljs-string">""</span>) {<br>    <span class="hljs-keyword">var</span> listItem = createNewTaskElement(taskInput.value);<br>  }<br>  <span class="hljs-keyword">else</span> {<br>    alert(<span class="hljs-string">"please enter a ToDo item"</span>);<br>  }<br>}</code></pre>
+                    <p>In the code above, the function named "createNewTaskElement" is called with a parameter passed into it containing the input fields value. Check out the "createNewTaskElement" function to further understand how everything is created.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
             <h3>Appending the New List Item</h3>
@@ -568,154 +654,159 @@ Good luck, and have fun!
             <ol class="instruction-list">
                 <li>
                     <p>Inside of the addTask function, Call a Method that will append the list item. Make your code look similar to the code below.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;)&#59;<br>&emsp;&emsp;if (taskInput.value !== &quot;&quot;) {<br>&emsp;&emsp;&emsp;&emsp;var listItem = createNewTaskElement(taskInput.value);<br>&emsp;&emsp;&emsp;&emsp;incompleteTasksHolder.appendChild(listItem);<br>&emsp;&emsp;}<br>&emsp;&emsp;else {<br>&emsp;&emsp;&emsp;&emsp;alert(&quot;please enter a ToDo item&quot;)&#59;<br>&emsp;&emsp;}<br>}</code></pre>
-                    <p>In the code above, &quot;incompleteTasksHolder&quot; is a variable that holds the &lt;ul&gt; element under the TODO section of the web page. We call the method &quot;appendChild&quot; using dot notation, and pass it a parameter of the new list item. The &quot;appendChild&quot; method will append a list item to an unordered list.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>  <span class="hljs-keyword">if</span> (taskInput.value !== <span class="hljs-string">""</span>) {<br>    <span class="hljs-keyword">var</span> listItem = createNewTaskElement(taskInput.value);<br>    incompleteTasksHolder.appendChild(listItem);<br>  }<br>  <span class="hljs-keyword">else</span> {<br>    alert(<span class="hljs-string">"please enter a ToDo item"</span>);<br>  }<br>}</code></pre>
+                    <p>In the code above, "incompleteTasksHolder" is a variable that holds the &lt;ul&gt; element under the TODO section of the web page. We call the method "appendChild" using dot notation, and pass it a parameter of the new list item. The "appendChild" method will append a list item to an unordered list.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view what happens when you add a new ToDo item.</p>
+                    <p>Open "index.html" in Google Chrome, and view what happens when you add a new ToDo item.</p>
                 </li>
             </ol>
-            <p>You may notice that the &quot;Edit&quot; and &quot;Delete&quot; buttons, and the checkboxes for our new events do not work. We will fix this soon. We will also write the code that will clear out the text input under the ADD ITEM section when the &quot;Add&quot; button is pressed. The latter is not necessary for our web application to work properly, but it is a good idea to add this functionality.</p>
+            <p>You may notice that the "Edit" and "Delete" buttons, and the checkboxes for our new events do not work. We will fix this soon. We will also write the code that will clear out the text input under the ADD ITEM section when the "Add" button is pressed. The latter is not necessary for our web application to work properly, but it is a good idea to add this functionality.</p>
             <h3>Binding More Events</h3>
             <p>We need to bind event listeners to the buttons and checkbox on the new list items that we add. There is a function already written that does this for you. A simple function call will solve the issue of the buttons and checkboxes not working on new events.</p>
             <ol class="instruction-list">
                 <li>
                     <p>Inside of the addTask function, Call a Function that binds the necessary events. Make your code look similar to the code below.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;)&#59;<br>&emsp;&emsp;if (taskInput.value !== &quot;&quot;) {<br>&emsp;&emsp;&emsp;&emsp;var listItem = createNewTaskElement(taskInput.value);<br>&emsp;&emsp;&emsp;&emsp;incompleteTasksHolder.appendChild(listItem);<br>&emsp;&emsp;&emsp;&emsp;bindTaskEvents(listItem, taskCompleted)&#59;<br>&emsp;&emsp;}<br>&emsp;&emsp;else {<br>&emsp;&emsp;&emsp;&emsp;alert(&quot;please enter a ToDo item&quot;)&#59;<br>&emsp;&emsp;}<br>}</code></pre>
-                    <p>The &quot;bindTaskEvents&quot; function takes two parameters. The first parameter, &quot;listItem&quot;, is the list item that we want to bind events to. For the purposes of this code, we want it to be the new list item we are adding. The second parameter, &quot;taskCompleted&quot; is a function that marks tasks as complete. We pass it into the function call to create the code that determines what the checkbox will do if checked. If you want to look into what code is written in the &quot;bindTaskEvents&quot; function, feel free to do so.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>  <span class="hljs-keyword">if</span> (taskInput.value !== <span class="hljs-string">""</span>) {<br>    <span class="hljs-keyword">var</span> listItem = createNewTaskElement(taskInput.value);<br>    incompleteTasksHolder.appendChild(listItem);<br>    bindTaskEvents(listItem, taskCompleted);<br>  }<br>  <span class="hljs-keyword">else</span> {<br>    alert(<span class="hljs-string">"please enter a ToDo item"</span>);<br>  }<br>}</code></pre>
+                    <p>The "bindTaskEvents" function takes two parameters. The first parameter, "listItem", is the list item that we want to bind events to. For the purposes of this code, we want it to be the new list item we are adding. The second parameter, "taskCompleted" is a function that marks tasks as complete. We pass it into the function call to create the code that determines what the checkbox will do if checked. If you want to look into what code is written in the "bindTaskEvents" function, feel free to do so.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view the changes.</p>
+                    <p>Open "index.html" in Google Chrome, and view the changes.</p>
                 </li>
             </ol>
             <p>The buttons and checkboxes for any new ToDo item should now work properly. In the next exercise, we will write the code that will clear out the text input under the ADD ITEM section when a new ToDo item is created.</p>
             <h3>Clearing the ADD ITEM Text Input Field</h3>
-            <p>All that needs to be added to the &quot;addTask&quot; function is the code that will clear the text input field under the ADD ITEM section.</p>
+            <p>All that needs to be added to the "addTask" function is the code that will clear the text input field under the ADD ITEM section.</p>
             <ol class="instruction-list">
                 <li>
                     <p>Inside of the addTask function, Type the line of code that clears the text input. Make your code look similar to the code below.</p>
-                    <pre><code>var addTask = function() {<br>&emsp;&emsp;console.log(&quot;add task...&quot;)&#59;<br>&emsp;&emsp;if (taskInput.value !== &quot;&quot;) {<br>&emsp;&emsp;&emsp;&emsp;var listItem = createNewTaskElement(taskInput.value);<br>&emsp;&emsp;&emsp;&emsp;incompleteTasksHolder.appendChild(listItem);<br>&emsp;&emsp;&emsp;&emsp;bindTaskEvents(listItem, taskCompleted)&#59;<br>&emsp;&emsp;&emsp;&emsp;taskInput.value = &quot;&quot;&#59;<br>&emsp;&emsp;}<br>&emsp;&emsp;else {<br>&emsp;&emsp;&emsp;&emsp;alert(&quot;please enter a ToDo item&quot;)&#59;<br>&emsp;&emsp;}<br>}</code></pre>
-                    <p>By setting taskInput&apos;s value to the empty string character (&quot;&quot;), or two blank quotes, it clears out anything typed into the text field.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> addTask = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"add task..."</span>);<br>  <span class="hljs-keyword">if</span> (taskInput.value !== <span class="hljs-string">""</span>) {<br>    <span class="hljs-keyword">var</span> listItem = createNewTaskElement(taskInput.value);<br>    incompleteTasksHolder.appendChild(listItem);<br>    bindTaskEvents(listItem, taskCompleted);<br>    taskInput.value = <span class="hljs-string">""</span>;<br>  }<br>  <span class="hljs-keyword">else</span> {<br>    alert(<span class="hljs-string">"please enter a ToDo item"</span>);<br>  }<br>}</code></pre>
+                    <p>By setting taskInput's value to the empty string character (""), or two blank quotes, it clears out anything typed into the text field.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view the changes.</p>
+                    <p>Open "index.html" in Google Chrome, and view the changes.</p>
                 </li>
             </ol>
-            <p>There are still a couple of bugs in our web application! You may have noticed that the checkbox and buttons for any pre-existing COMPLETED ToDo items do not work. We will write the code to fix these errors in the following exercises.</p>
-            <h2>Binding Events for Completed Items</h2>
+            
+<iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual7.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>There are still a couple of bugs in our web application! You may have noticed that the checkbox and buttons for any pre-existing COMPLETED ToDo items do not work. We will write the code to fix these errors in the following exercises.</p>
+            <h2 id="ToDo List Web App Continued_Binding Events for Completed Items">Binding Events for Completed Items</h2>
             <p>When our web app loads, there are some pre-existing ToDo items in the TODO and COMPLETED sections. All of the TODO items work properly, but the buttons and checkbox on the single, pre-existing COMPLETED item does not work properly. If our web application was able to save our progress as we closed our web browser, it would be important to fix this issue, because we could have multiple items in the COMPLETED section. Currently, the web application does not save any progress you make, and always reverts to the default ToDo list that is first displayed upon browser refresh.</p>
             <h3>Cycling Over COMPLETED Pre-Existing Items</h3>
-            <p>To cycle over the items in the COMPLETED section, we will use a loop. Loops in JavaScript simply run the same code for a specified amount of time or runs. Some loops can be based on conditions of what is currently going on. For the purposes of cycling over the items in the COMPLETED section, we will use something called a &quot;For-Loop&quot; which is common in many programming languages, including JavaScript. </p>
+            <p>To cycle over the items in the COMPLETED section, we will use a loop. Loops in JavaScript simply run the same code for a specified amount of time or runs. Some loops can be based on conditions of what is currently going on. For the purposes of cycling over the items in the COMPLETED section, we will use something called a "For-Loop" which is common in many programming languages, including JavaScript. </p>
             <ol class="instruction-list">
                 <li>
-                    <p>Scroll Down to the section that has the &quot;Execution Start&quot; comment.</p>
+                    <p>Scroll Down to the section that has the "Execution Start" comment.</p>
                 </li>
                 <li>
-                    <p>Find the comment that says &quot;cycle over the completeTasksHolder ul list items&quot;.</p>
+                    <p>Find the comment that says "cycle over the completeTasksHolder ul list items".</p>
                 </li>
                 <li>
                     <p>Below the comment, Type the following.</p>
-                    <pre><code>for (var i=0&#59; i&lt;completeTasksHolder.children.length&#59; i++) {</code></pre> </li>
+                    <pre><code class="hljs matlab"><span class="hljs-keyword">for</span> (var <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span>&lt;completeTasksHolder.children.<span class="hljs-built_in">length</span>; <span class="hljs-built_in">i</span>++) {</code></pre> </li>
                 <li>
-                    <p>Find the comment that says &quot;bind events to list item&apos;s children (taskIncomplete)&quot;.</p>
+                    <p>Find the comment that says "bind events to list item's children (taskIncomplete)".</p>
                 </li>
                 <li>
-                    <p>Below the comment, Type the following closing curly brace to close the &quot;For-Loop&quot;.</p>
-                    <pre><code>}</code></pre>
-                    <p>The &quot;For-Loop&quot; declaration above will run any code between it&apos;s curly braces the same number of times as the number of list items under the COMPLETED section&apos;s unordered list. This will give the effect of cycling through the items under the COMPLETED section. Every time the &quot;For-Loop&quot; runs, the variable &quot;i&quot; is incremented by one and the code inside runs until it is no longer less than the number of children that the unordered list under the COMPLETED section holds.</p>
+                    <p>Below the comment, Type the following closing curly brace to close the "For-Loop".</p>
+                    <pre><code class="hljs">}</code></pre>
+                    <p>The "For-Loop" declaration above will run any code between it's curly braces the same number of times as the number of list items under the COMPLETED section's unordered list. This will give the effect of cycling through the items under the COMPLETED section. Every time the "For-Loop" runs, the variable "i" is incremented by one and the code inside runs until it is no longer less than the number of children that the unordered list under the COMPLETED section holds.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
-            <p>In the following exercise, we will complete the inside of the &quot;For-Loop&quot; to bind events to the pre-existing list items.</p>
+            <p>In the following exercise, we will complete the inside of the "For-Loop" to bind events to the pre-existing list items.</p>
             <h3>Getting the Current List Item</h3>
-            <p>As the &quot;For-Loop&quot; loops through the children (list items) of the unordered list, we can use the counter variable (i) to get the current list item, and bind events to it. To get the current list item, follow these steps.</p>
+            <p>As the "For-Loop" loops through the children (list items) of the unordered list, we can use the counter variable (i) to get the current list item, and bind events to it. To get the current list item, follow these steps.</p>
             <ol class="instruction-list">
                 <li>
-                    <p>Find the comment that says &quot;bind events to list item’s children (taskIncomplete)&quot;.</p>
+                    <p>Find the comment that says "bind events to list item’s children (taskIncomplete)".</p>
                 </li>
                 <li>
-                    <p>Below this comment, but Above the closing &quot;For-Loop&quot; curly brace, type the following.</p>
-                    <pre><code>var listItem = completedTasksHolder.children[i]&#59;</code></pre>
+                    <p>Below this comment, but Above the closing "For-Loop" curly brace, type the following.</p>
+                    <pre><code class="hljs php"><span class="hljs-keyword">var</span> listItem = completedTasksHolder.children[i];</code></pre>
                     <p>Your code should look like the following, below.</p>
-                    <pre><code>
-// cycle over the completeTasksHolder ul list items
-for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
-  // bind events to list item's children (taskIncomplete)
-  var listItem = completedTasksHolder.children[i];
+                    <pre><code class="hljs php">
+<span class="hljs-comment">// cycle over the completeTasksHolder ul list items</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;completedTasksHolder.children.length; i++) {
+  <span class="hljs-comment">// bind events to list item's children (taskIncomplete)</span>
+  <span class="hljs-keyword">var</span> listItem = completedTasksHolder.children[i];
 }                    
                     </code></pre>
-                    <p>By typing completedTasksHolder.children, you get all the children (list items) of the unordered list under the COMPLETED section. It is possible to get the i&apos;th element of the collection, by using square brackets. This code will grab the current list item for the given iteration of the &quot;For-Loop&quot;, and store it into a variable named &quot;listItem&quot;.</p>
+                    <p>By typing completedTasksHolder.children, you get all the children (list items) of the unordered list under the COMPLETED section. It is possible to get the i'th element of the collection, by using square brackets. This code will grab the current list item for the given iteration of the "For-Loop", and store it into a variable named "listItem".</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
             </ol>
             <p>Now that you have the current list item stored into a variable, you can write the code to bind events to it.</p>
             <h3>Binding Events to the Current List Item</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Inside of the &quot;For-Loop&quot;, Type the code to bind events to the list item. Make your code look similar to the code below.</p>
-                    <pre><code>
-// cycle over the completeTasksHolder ul list items
-for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
-  // bind events to list item's children (taskIncomplete)
-  var listItem = completedTasksHolder.children[i];
+                    <p>Inside of the "For-Loop", Type the code to bind events to the list item. Make your code look similar to the code below.</p>
+                    <pre><code class="hljs php">
+<span class="hljs-comment">// cycle over the completeTasksHolder ul list items</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;completedTasksHolder.children.length; i++) {
+  <span class="hljs-comment">// bind events to list item's children (taskIncomplete)</span>
+  <span class="hljs-keyword">var</span> listItem = completedTasksHolder.children[i];
   bindTaskEvents(listItem, taskIncomplete);
 }
                     </code></pre>
-                    <p>The &quot;bindTaskEvents&quot; function takes two parameters. The first parameter, &quot;listItem&quot;, is the list item that we want to bind events to. For the purposes of this code, &quot;listItem&quot; is the current list item that the &quot;For-Loop&quot; is on at that time. The second parameter, &quot;taskIncomplete&quot; is a function that marks tasks as incomplete. We pass it into the function call to create the code that determines what the checkbox will do if unchecked. If you want to look into what code is written in the &quot;bindTaskEvents&quot; function, feel free to do so.</p>
+                    <p>The "bindTaskEvents" function takes two parameters. The first parameter, "listItem", is the list item that we want to bind events to. For the purposes of this code, "listItem" is the current list item that the "For-Loop" is on at that time. The second parameter, "taskIncomplete" is a function that marks tasks as incomplete. We pass it into the function call to create the code that determines what the checkbox will do if unchecked. If you want to look into what code is written in the "bindTaskEvents" function, feel free to do so.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view the changes.</p>
+                    <p>Open "index.html" in Google Chrome, and view the changes.</p>
                 </li>
             </ol>
-            <p>The checkbox and buttons on the pre-existing COMPLETED item that is displayed upon page refresh should work properly. There is one more line of code to be written, that will change the functionality of the list item if the pre-existing item under the COMPLETED section is in edit mode or not. Right now, it will always not be in &quot;edit mode&quot; upon page refresh, but it is a good idea to write the code in case this web application had saving functionality, and you accidently left the page and closed out of the browser while you were editing a COMPLETED ToDo item.</p>
-            <h3>Checking For &quot;Edit Mode&quot; on Pre-Existing List Items</h3>
+            <p>The checkbox and buttons on the pre-existing COMPLETED item that is displayed upon page refresh should work properly. There is one more line of code to be written, that will change the functionality of the list item if the pre-existing item under the COMPLETED section is in edit mode or not. Right now, it will always not be in "edit mode" upon page refresh, but it is a good idea to write the code in case this web application had saving functionality, and you accidently left the page and closed out of the browser while you were editing a COMPLETED ToDo item.</p>
+            <h3>Checking For "Edit Mode" on Pre-Existing List Items</h3>
             <ol class="instruction-list">
                 <li>
-                    <p>Inside of the &quot;For-Loop&quot;, Type the code to check if the list item is in &quot;edit mode&quot; or not. Make your code look similar to the code below.</p>
-                    <pre><code>
-// cycle over the completeTasksHolder ul list items
-for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
-  // bind events to list item's children (taskIncomplete)
-  var listItem = completedTasksHolder.children[i];
+                    <p>Inside of the "For-Loop", Type the code to check if the list item is in "edit mode" or not. Make your code look similar to the code below.</p>
+                    <pre><code class="hljs php">
+<span class="hljs-comment">// cycle over the completeTasksHolder ul list items</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;completedTasksHolder.children.length; i++) {
+  <span class="hljs-comment">// bind events to list item's children (taskIncomplete)</span>
+  <span class="hljs-keyword">var</span> listItem = completedTasksHolder.children[i];
   bindTaskEvents(listItem, taskIncomplete);
   checkForEditMode(listItem);
 }                    
                    </code></pre>
-                    <p>The function, &quot;checkForEditMode&quot; takes one parameter. The single parameter is the list item to check if in &quot;edit mode&quot; or not. Feel free to view the code that is run within the &quot;checkForEditMode&quot; function.</p>
+                    <p>The function, "checkForEditMode" takes one parameter. The single parameter is the list item to check if in "edit mode" or not. Feel free to view the code that is run within the "checkForEditMode" function.</p>
                 </li>
                 <li>
-                    <p>Save the file &quot;app.js&quot;.</p>
+                    <p>Save the file "app.js".</p>
                 </li>
                 <li>
-                    <p>Open &quot;index.html&quot; in Google Chrome, and view the changes.</p>
+                    <p>Open "index.html" in Google Chrome, and view the changes.</p>
                 </li>
             </ol>
-            <p>This completes our ToDo List web application. Hopefully, this real life example gave you a better idea of what JavaScript can do to a web page. It adds interactivity, and really enhances the user experience. If you are still feeling confused about anything relating to JavaScript, feel free to check out the documentation attached to the end of this manual. Once again, a good online reference is the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>). It is very uncommon for a JavaScript developer to write an entire script without having to look something up or use documentation or some sort of reference. Do not be ashamed of simply doing a web search if you are stuck on a certain part while writing your code, also.</p>
-        </section>
+            <iframe height="800px" width="100%" src="./JavaScript 1_upd_files/STS-JavaScript-Manual8.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>This completes our ToDo List web application. Hopefully, this real life example gave you a better idea of what JavaScript can do to a web page. It adds interactivity, and really enhances the user experience. If you are still feeling confused about anything relating to JavaScript, feel free to check out the documentation attached to the end of this manual. Once again, a good online reference is the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>). It is very uncommon for a JavaScript developer to write an entire script without having to look something up or use documentation or some sort of reference. Do not be ashamed of simply doing a web search if you are stuck on a certain part while writing your code, also.</p>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <!-- End of ToDo List Web App Continued -->
         <!-- Start of Documentation -->
         <section class="topic">
-            <h1 class="no-top-margin">Documentation</h1>
-            <h2>Operators</h2>
+            <h1 class="no-top-margin" id="Documentation">Documentation</h1>
+            <h2 id="Documentation_Operators">Operators</h2>
             <h3>Arithmetic Operators</h3>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Operator</th>
                     <th>Description</th>
                     <th>Example</th>
@@ -755,10 +846,10 @@ for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
                     <td>Decrement</td>
                     <td>x -- y</td>
                 </tr>
-            </table>
+            </tbody></table>
             <h3>Assignment Operators</h3>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Operator</th>
                     <th>Example</th>
                     <th>Same As</th>
@@ -793,10 +884,10 @@ for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
                     <td>x %= y</td>
                     <td>x = x % y</td>
                 </tr>
-            </table>
+            </tbody></table>
             <h3>Comparison Operators</h3>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Operator</th>
                     <th>Description</th>
                     <th>Example</th>
@@ -836,10 +927,10 @@ for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
                     <td>Less Than or Equal To</td>
                     <td>x &lt;= y</td>
                 </tr>
-            </table>
+            </tbody></table>
             <h3>Logical Operators</h3>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Operator</th>
                     <th>Description</th>
                     <th>Example</th>
@@ -859,67 +950,67 @@ for (var i=0; i&lt;completedTasksHolder.children.length; i++) {
                     <td>Not</td>
                     <td>!(x &lt; y)</td>
                 </tr>
-            </table>
-            <h2>Conditional Statements</h2>
+            </tbody></table>
+            <h2 id="Documentation_Conditional Statements">Conditional Statements</h2>
             <h3>If / Else If / Else Statement</h3>
-            <pre><code>
-if(condition1) {
-  // code to execute if condition1 is true
-} else if (condition2) {
-  // code to execute if condition1 is false
-  // and condition2 is true
-} else {
-  // code to execute if condition1 and
+            <pre><code class="hljs python">
+<span class="hljs-keyword">if</span>(condition1) {
+  // code to execute <span class="hljs-keyword">if</span> condition1 <span class="hljs-keyword">is</span> true
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (condition2) {
+  // code to execute <span class="hljs-keyword">if</span> condition1 <span class="hljs-keyword">is</span> false
+  // <span class="hljs-keyword">and</span> condition2 <span class="hljs-keyword">is</span> true
+} <span class="hljs-keyword">else</span> {
+  // code to execute <span class="hljs-keyword">if</span> condition1 <span class="hljs-keyword">and</span>
   // condition2 are both false
 }
             </code></pre>
             <h3>Switch Statement</h3>
-            <h2>Switch Statement Arguments</h2>
+            <h2 id="Documentation_Switch Statement Arguments">Switch Statement Arguments</h2>
             <p>You can use a switch statement for characters or integers.</p>
-            <pre><code>
+            <pre><code class="hljs php">
             
-switch(x) {
-  case 1:
-    // code to execute if x==1
-    break;
-  case 2:
-    // code to execute if x==2
-    break;
-  default:
-    // code to execute if x is neither 1 nor 2
+<span class="hljs-keyword">switch</span>(x) {
+  <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+    <span class="hljs-comment">// code to execute if x==1</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+    <span class="hljs-comment">// code to execute if x==2</span>
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">default</span>:
+    <span class="hljs-comment">// code to execute if x is neither 1 nor 2</span>
 }         
             </code></pre>
-            <h2>Loops</h2>
+            <h2 id="Documentation_Loops">Loops</h2>
             <h3>For Loop</h3>
-            <pre><code>
+            <pre><code class="hljs php">
             
-for(var i = startCondition&#59; i &lt; = endCondition&#59; i += incrementAmount) {
-// code to execute on each loop until the middle condition is met.
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = startCondition; i &lt; = endCondition; i += incrementAmount) {
+<span class="hljs-comment">// code to execute on each loop until the middle condition is met.</span>
 }
             
             </code></pre>
             <h3>While Loop</h3>
-            <pre><code>
-while(conditionalStatement) {
-x = 0;
-/*  code to execute on loop, as long as the conditionalStatement is not false */
+            <pre><code class="hljs python">
+<span class="hljs-keyword">while</span>(conditionalStatement) {
+x = <span class="hljs-number">0</span>;
+/*  code to execute on loop, <span class="hljs-keyword">as</span> long <span class="hljs-keyword">as</span> the conditionalStatement <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> false */
 }
             
             </code></pre>
             <h3>For ... In Loop</h3>
 
             <p>The For ... In loop works much like an iterator in Java or a foreach loop in many other languages.</p>
-            <pre><code>
-for(variableName in objectName) {
-// code to execute for each item (here, called variableName) in the object called objectName
+            <pre><code class="hljs r">
+<span class="hljs-keyword">for</span>(variableName <span class="hljs-keyword">in</span> objectName) {
+// code to execute <span class="hljs-keyword">for</span> each item (here, called variableName) <span class="hljs-keyword">in</span> the object called objectName
 }
             
             </code></pre>
-            <h2>Date Object</h2>
-            <p>The date object provides a structure for working with both dates and times, as well as getting information about the current date and time. Again, since JavaScript is a client-side scripting language, it is able to be &quot;fooled&quot; if you change your computer time so its use is somewhat limited but it can provide some useful effects.</p>
+            <h2 id="Documentation_Date Object">Date Object</h2>
+            <p>The date object provides a structure for working with both dates and times, as well as getting information about the current date and time. Again, since JavaScript is a client-side scripting language, it is able to be "fooled" if you change your computer time so its use is somewhat limited but it can provide some useful effects.</p>
             <p>Here are the most common date object functions:</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Function</th>
                     <th>Description</th>
                 </tr>
@@ -955,12 +1046,12 @@ for(variableName in objectName) {
                     <td>getSeconds())</td>
                     <td>Extracts the seconds from a Date Object</td>
                 </tr>
-            </table>
-            <h2>String Object</h2>
+            </tbody></table>
+            <h2 id="Documentation_String Object">String Object</h2>
             <p>The string object provides built-in functions for dealing with text. We will find it to be useful when we get to form validation and when we want to check the capitalization or length of words typed into text boxes.</p>
             <p>Here are the most common string object functions.</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Function</th>
                     <th>Description</th>
                 </tr>
@@ -1000,12 +1091,12 @@ for(variableName in objectName) {
                     <td>length</td>
                     <td>Gets the number of characters in a string</td>
                 </tr>
-            </table>
-            <h2>Math Object</h2>
+            </tbody></table>
+            <h2 id="Documentation_Math Object">Math Object</h2>
             <p>The math object provides access to commonly-used mathematical functions.</p>
             <p>Here are the most common math object functions.</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Function</th>
                     <th>Description</th>
                 </tr>
@@ -1065,39 +1156,39 @@ for(variableName in objectName) {
                     <td>tan(x)</td>
                     <td>Tangent of x</td>
                 </tr>
-            </table>
-            <h2>Navigator Object</h2>
+            </tbody></table>
+            <h2 id="Documentation_Navigator Object">Navigator Object</h2>
             <p>The navigator object is very useful to find out what type of browser the user is using (this is called browser detection). It is a fact of life that different browsers will handle web pages differently (especially older versions of browsers), so being able to detect an incompatible browser may be beneficial. In order to find out what browser the user is currently viewing your website on, get the userAgent object, and check to see if it has a specific browser name key as a property.</p>
-            <pre><code>
-var usrAg = navigator.userAgent;
+            <pre><code class="hljs php">
+<span class="hljs-keyword">var</span> usrAg = navigator.userAgent;
 
-var browserName;
-if (usrAg.indexOf("Chrome") &gt; -1) {
-    browserName = "Google Chrome";
+<span class="hljs-keyword">var</span> browserName;
+<span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"Chrome"</span>) &gt; <span class="hljs-number">-1</span>) {
+    browserName = <span class="hljs-string">"Google Chrome"</span>;
 }
-else if (usrAg.indexOf("Safari") &gt; -1) {
-    browserName = "Safari";
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"Safari"</span>) &gt; <span class="hljs-number">-1</span>) {
+    browserName = <span class="hljs-string">"Safari"</span>;
 }
-else if (usrAg.indexOf("Opera") &gt; -1) {
-    browserName = "Opera";
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"Opera"</span>) &gt; <span class="hljs-number">-1</span>) {
+    browserName = <span class="hljs-string">"Opera"</span>;
 }
-else if (usrAg.indexOf("Firefox") &gt; -1) {
-    browserName = "Mozilla Firefox";
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"Firefox"</span>) &gt; <span class="hljs-number">-1</span>) {
+    browserName = <span class="hljs-string">"Mozilla Firefox"</span>;
 }
-else if (usrAg.indexOf("MSIE") &gt; -1) {
-    browserName = "Microsoft Internet Explorer";
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"MSIE"</span>) &gt; <span class="hljs-number">-1</span>) {
+    browserName = <span class="hljs-string">"Microsoft Internet Explorer"</span>;
 }
-alert("You are using: " + browserName);
+alert(<span class="hljs-string">"You are using: "</span> + browserName);
 
         </code></pre>
-            <p>The code above finds out what browser you are using and displays it in an alert. You should type &quot;&gt; -1&quot; in the conditional, because the &quot;indexOf&quot; method returns -1 if an index for the given String argument could not be found.</p>
-            <h2>Document Object</h2>
-            <p>In addition to having a set of functions associated with it, the document object also is a way to &quot;view&quot; the HTML of a page in a tree structure.</p>
-            <img class="center" src="images/dom-tree.png" alt="Diagram of the Document Object, showing HTML elements and their parent-child relationship">
+            <p>The code above finds out what browser you are using and displays it in an alert. You should type "&gt; -1" in the conditional, because the "indexOf" method returns -1 if an index for the given String argument could not be found.</p>
+            <h2 id="Documentation_Document Object">Document Object</h2>
+            <p>In addition to having a set of functions associated with it, the document object also is a way to "view" the HTML of a page in a tree structure.</p>
+            <img class="center" src="./JavaScript 1_upd_files/dom-tree.png" alt="Diagram of the Document Object, showing HTML elements and their parent-child relationship">
             <p>In this tree, the important relationship to keep in mind is the parent-child link (think family tree). A child tag (or node as it is sometimes referred to) is any tag directly inside of its parent tag. In the above example, <span class="type-text">&lt;head&gt;</span> and <span class="type-text">&lt;title&gt;</span> are children of <span class="type-text">&lt;html&gt;</span> and <span class="type-text">&lt;html&gt;</span> is the parent of <span class="type-text">&lt;head&gt;</span> and <span class="type-text">&lt;title&gt;</span>.</p>
             <p>Here are the most common document object functions.</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Function</th>
                     <th>Description</th>
                 </tr>
@@ -1123,16 +1214,16 @@ alert("You are using: " + browserName);
                 </tr>
                 <tr>
                     <td>childNode[i]</td>
-                    <td>Gets the &quot;i&quot;th child node</td>
+                    <td>Gets the "i"th child node</td>
                 </tr>
                 <tr>
                     <td>lastChild</td>
                     <td>Gets the last child HTML tag</td>
                 </tr>
-            </table>
+            </tbody></table>
             <p>Once you start editing an individual tag, you can use several other functions to do things like modify the text and CSS styling. Some of the most useful functions that can be used on individual tags include:</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Function</th>
                     <th>Description</th>
                 </tr>
@@ -1160,12 +1251,12 @@ alert("You are using: " + browserName);
                     <td>style.backgroundColor</td>
                     <td>Sets the CSS background color of the tag</td>
                 </tr>
-            </table>
-            <p>Most of the other CSS properties follow the same pattern as <span class="type-text">color</span> and <span class="type-text">backgroundColor</span>, namely that the properties are &quot;camel-case&quot; meaning that the first word is all lower-case and each successive word starts with an upper case letter. Also, more specific tags (like lists, tables and other higher-order formattings) include specialized function to easily add list items or table rows.</p>
-            <h2>Dynamic Effects</h2>
+            </tbody></table>
+            <p>Most of the other CSS properties follow the same pattern as <span class="type-text">color</span> and <span class="type-text">backgroundColor</span>, namely that the properties are "camel-case" meaning that the first word is all lower-case and each successive word starts with an upper case letter. Also, more specific tags (like lists, tables and other higher-order formattings) include specialized function to easily add list items or table rows.</p>
+            <h2 id="Documentation_Dynamic Effects">Dynamic Effects</h2>
             <p>The most common JavaScript events help trigger segments of JavaScript code on specified user actions. Here are a few of the most common events:</p>
             <table>
-                <tr>
+                <tbody><tr>
                     <th>Event</th>
                     <th>Description</th>
                 </tr>
@@ -1175,7 +1266,7 @@ alert("You are using: " + browserName);
                 </tr>
                 <tr>
                     <td>onsubmit</td>
-                    <td>Triggers when a form is submitted via a &quot;submit&quot; button</td>
+                    <td>Triggers when a form is submitted via a "submit" button</td>
                 </tr>
                 <tr>
                     <td>onfocus, onblur</td>
@@ -1193,12 +1284,12 @@ alert("You are using: " + browserName);
                     <td>onclick, ondblclick</td>
                     <td>Triggers when the mouse is clicked (or doubleclicked) on an object</td>
                 </tr>
-            </table>
+            </tbody></table>
             <!-- End of Documentation -->
             <!-- Start of Conclusion -->
-        </section>
+        <a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section>
         <section class="topic">
-            <h1 class="no-top-margin">Conclusion</h1>
+            <h1 class="no-top-margin" id="Conclusion">Conclusion</h1>
             <p>From the exercises and material covered in this class, you should have a pretty good idea of the capabilities and limitations associated with JavaScript. Keep in mind a couple of key points:</p>
             <ul>
                 <li>
@@ -1208,16 +1299,17 @@ alert("You are using: " + browserName);
                     <p>JavaScript can be turned off, so don’t require its use for any feature on your website (especially form validation). Sometimes this is referred to as progressive enhancement, if you are looking for further information about it on the web.</p>
                 </li>
                 <li>
-                    <p>Great references for JavaScript can be found online, specifically the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org">https://developer.mozilla.org</a>)</p>
+                    <p>Great references for JavaScript can be found online, specifically the Mozilla Developer Network, or MDN (<a href="https://developer.mozilla.org/">https://developer.mozilla.org</a>)</p>
                 </li>
             </ul>
-            <h2>Next Steps</h2>
+            <h2 id="Conclusion_Next Steps">Next Steps</h2>
             <p>Now that you have some experience with JavaScript, there are many other STS classes to look into:</p>
             <h3>JavaScript 2: jQuery and AJAX</h3>
             <p>This class expands on the topics covered in JavaScript 1 to introduce some pre-built JavaScript packages that make the creation of professional-looking effects much easier. In this class you will work to create effects like expanding/collapsing menus, clicking-and-dragging effects, and immersive user interactions called AJAX (asynchronous JavaScript and XML).</p>
             <h3>PHP/SQL in a Day</h3>
             <p>This class covers everything about PHP and SQL used for server-side programming in web pages. It is a good idea to get a general knowledge of both client-side, and server-side languages.</p>
             <!-- END MAIN CONTENT -->
-            </body>
+            
 
-        </html>
+        
+<a href="https://sts.doit.wisc.edu/manuals/javascript1/#outline" class="top-link">Back to Topics</a></section></body></html>
