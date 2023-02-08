@@ -414,7 +414,7 @@ Good luck, and have fun!
                 <h2 id="Variables, Functions, Objects, and the DOM_Functions">Declaration</h2>
                 <div class="sidebar-note">
                     <h2>Declaring Variables</h2>
-                    <p>Always put the "var" keyword in your variable declarations. This will reduce errors in your code.
+                    <p>Always put the "let" keyword in your variable declarations. This will reduce errors in your code.
                     </p>
                 </div>
                 <p>A variable can be thought of as a box that contains some sort of information. For example, you could
@@ -424,18 +424,18 @@ Good luck, and have fun!
                     storing something into an empty box. If you have the name of a variable, you can easily read the
                     value stored in that variable by simply using the name wherever you need the value.</p>
                 <p>In JavaScript we can declare variables using the following syntax,</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName;</code></pre>
-                <p>where "var" is a special keyword that denotes a variable, and "variableName" is whatever you choose
+                <pre><code class="hljs php"><span class="hljs-keyword">let</span> variableName;</code></pre>
+                <p>where "let" is a special keyword that denotes a variable, and "variableName" is whatever you choose
                     to name the variable. There are some restrictions as to what you can name your variables. Good
                     reference for this information and reference for JavaScript in general can be found on the Mozilla
                     Developer Network, or MDN (<a
                         href="https://developer.mozilla.org/">https://developer.mozilla.org</a>).</p>
                 <p>If you would like to store a value into the variable, you can do so on the same line by using the
                     following syntax,</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName = some value here;</code></pre>
+                <pre><code class="hljs php"><span class="hljs-keyword">let</span> variableName = some value here;</code></pre>
                 <p>where "some value here" could be a string, number, or object.</p>
                 <p>You can declare and assign variables on separate lines as well. Use the following syntax.</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> variableName;<br>variableName = some value here;</code></pre>
+                <pre><code class="hljs php"><span class="hljs-keyword">let</span> variableName;<br>variableName = some value here;</code></pre>
                 <p>This syntax works in the same way as the single line declaration and assignment seen above.</p>
                 <p>Keep in mind that in JavaScript, variables are case-sensitive. This means variables named "message",
                     "Message", and "MESSAGE" could all represent different things. Also, since JavaScript is a
@@ -450,11 +450,11 @@ Good luck, and have fun!
                 <h3>Numbers</h3>
                 <p>The Number data type in JavaScript is used to store integers and decimal numbers. Variables with this
                     data type can also be used to carry out math operations.</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> num1 = 15;<br><span class="hljs-keyword">var</span> num2 = num1 / 3.7;</code></pre>
+                <pre><code class="hljs php"><span class="hljs-keyword">let</span> num1 = 15;<br><span class="hljs-keyword">let</span> num2 = num1 / 3.7;</code></pre>
                 <h3>Strings</h3>
                 <p>The String data type in JavaScript is used to store text, which can be a combination of letters,
                     numbers and special characters. All strings need to be enclosed in single or double quotes.</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> city = "Madison";<br><span class="hljs-keyword">var</span> name = 'Jeff';</code></pre>
+                <pre><code class="hljs php"><span class="hljs-keyword">let</span> city = "Madison";<br><span class="hljs-keyword">let</span> name = 'Jeff';</code></pre>
 
             </section>
             <!-- End of Variables-->
@@ -468,21 +468,20 @@ Good luck, and have fun!
                     duplicated JavaScript code should probably be put into a function. Wherever you use that code, you
                     may call that function.</p>
                 <p>A common way to create a function in JavaScript can be done using the following syntax.</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> myFunctionName = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">}</span></code></pre>
-                <p>This way of creating a function and storing it into a variable is common in JavaScript. If you want
-                    to call the function we declared above, use the following syntax.</p>
+                <pre><code class="hljs php"><span class="hljs-keyword">function</span> myFunctionName()<span class="hljs-function"><span class="hljs-keyword"></span></span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">}</span></code></pre>
+                <p> If you want to call the function we declared above, use the following syntax.</p>
                 <pre><code class="hljs">myFunctionName();</code></pre>
                 <p>Call the function wherever you need to repeat the code that is inside of the function declaration.
                 </p>
                 <p>There is another way to declare functions in JavaScript using the following syntax. However, in the
                     exercises in this class, we will only use the declaration shown before for our functions.</p>
-                <pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunctionName</span><span class="hljs-params">()</span> </span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">}</span></code></pre>
-                <p>Calling a function declared like the function above, is the same as before.</p>
+                    <pre><code class="hljs php"><span class="hljs-keyword">var</span> myFunctionName = <span class="hljs-function"><span class="hljs-keyword">function()</span></span>{<br>  <span class="hljs-comment">// repeatable code goes here!</span><br><span class="hljs-comment">};</span></code></pre>
+                    <p>Declaring a function like this has some minor changes that we won't go into, but they are called in functionally identical ways.</p>
                 <p>"function" is a keyword in JavaScript and always has to be used when declaring a function. You may
-                    add arguments to the function declaration between the parenthesis, and you may also return values
+                    add arguments to the function declaration between the parenthesis, and you may also return values   
                     from the function. Below is an example function declaration and function call that takes two
                     numbers, adds them together, and stores them in a variable named "result".</p>
-                <pre><code class="hljs php"><span class="hljs-keyword">var</span> addNumbers = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(num1, num2)</span> </span>{<br>  <span class="hljs-keyword">return</span> num1+num2;<br>}<br><span class="hljs-keyword">var</span> result = addNumbers(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>);</code></pre>
+                <pre><code class="hljs php"><span class="hljs-keyword">function</span> addNumbers(num1, num2)<span class="hljs-function"></span>{<br>  <span class="hljs-keyword">return</span> num1+num2;<br>}<br><span class="hljs-keyword">let</span> result = addNumbers(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>);</code></pre>
                 <p>In this example, "result" should hold the integer 9.</p>
             </section>
             <!-- End of Functions -->
@@ -654,7 +653,7 @@ Good luck, and have fun!
                             Open the "debug.js" file and go to line 20, where num1 and num2 are being added and the
                             result is being stored in sum. Replace the line with the following code:
                         </p>
-                        <pre><code class="hljs php">var sum = parseInt(num1) + parseInt(num2);</code></pre>
+                        <pre><code class="hljs php">let sum = parseInt(num1) + parseInt(num2);</code></pre>
                         <p>
                             What this does is convert num1 and num2 to integers before adding them, and the correct
                             sum
@@ -685,7 +684,7 @@ Good luck, and have fun!
                     within a function, it can only be seen and used within that function. This is known as a "local
                     variable". This can be problematic sometimes because it is possible to accidentally write new values
                     to existing variables.</p>
-                <p>Just be sure that whenever you declare a variable, you always use the "var" keyword. This will reduce
+                <p>Just be sure that whenever you declare a variable, you always use the "let" keyword. This will reduce
                     errors in your code. Also, a good rule of thumb is to declare any variables that you will use
                     throughout the whole script at the top of your JavaScript file, and declare any variables that you
                     will use within certain functions at the top of the function declaration.</p>
@@ -865,7 +864,7 @@ Good luck, and have fun!
                     the particular element that we want as an argument to the function. Here is an example of
                     getElementById:
                 </p>
-                <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> incompleteTasksHolder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"incomplete-tasks"</span>);</code></pre>
+                <pre><code class="hljs javascript"><span class="hljs-keyword">let</span> incompleteTasksHolder = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"incomplete-tasks"</span>);</code></pre>
                 <p>
                     Here, we are getting the HTML element with id="incomplete-tasks", and storing it in the variable
                     "incompleteTasksHolder" so that we can reference it later in the JavaScript file. The other DOM
@@ -874,7 +873,7 @@ Good luck, and have fun!
                     while querySelector uses a CSS selector, which is useful for getting multiple elements of the same
                     type. You can also get elements by their id using this method. Here is an example of querySelector:
                 </p>
-                <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> incompleteTasksHolder = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#incomplete-tasks'</span>);</code></pre>
+                <pre><code class="hljs javascript"><span class="hljs-keyword">let</span> incompleteTasksHolder = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#incomplete-tasks'</span>);</code></pre>
                 <p>
                     This is doing exactly the same thing as getElementById, the only difference here is the syntax. When
                     using the querySelector method to get an element by id, the id has to be prefixed with a "#". For
@@ -894,7 +893,7 @@ Good luck, and have fun!
                     <li>
                         <p>In the window.onLoad function, right below the comment that says declare the variable for the
                             calculate button, type the following code:</p>
-                        <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> calculateButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"calculate"</span>);</code></pre>
+                        <pre><code class="hljs javascript"><span class="hljs-keyword">let</span> calculateButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"calculate"</span>);</code></pre>
                     </li>
                     <li>
                         <p>Save the file "app.js".</p>
@@ -935,7 +934,7 @@ Good luck, and have fun!
                             the "getElementById" method. The IDs for the HTML elements are in the comment. Use the same
                             name for the variables as the ID of the HTML element, as those variables are later used in
                             the code to calculate the tip. The first one is given as an example below:</p>
-                        <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> amount = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"amount"</span>).value;</code></pre>
+                        <pre><code class="hljs javascript"><span class="hljs-keyword">let</span> amount = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"amount"</span>).value;</code></pre>
                         <p>Note the ".value" at the end of the statement. This is used to get the integer value, which
                             is required to do integer arithmetic like basic math operations using the variables. Do the
                             same for the other two HTML elements.</p>
@@ -953,7 +952,7 @@ Good luck, and have fun!
                     <li>
                         <p>Inside of the calculateTip function, add an if-else statement just below the comment that
                             says "add if else block here". Make your code look similar to the code below.</p>
-                        <pre><code class="hljs javascript"><span class="hljs-keyword">if</span> (amount == <span class="hljs-string">""</span> || service == <span class="hljs-string">'Select'</span>) {<br>   alert(<span class="hljs-string">"Please enter valid values"</span>); <br>}<br><span class="hljs-keyword">else</span> {<br>    <br>}</code></pre>
+                        <pre><code class="hljs javascript"><span class="hljs-keyword">if</span> (amount === <span class="hljs-string">""</span> || service === <span class="hljs-string">'Select'</span>) {<br>   alert(<span class="hljs-string">"Please enter valid values"</span>); <br>}<br><span class="hljs-keyword">else</span> {<br>    <br>}</code></pre>
                         <p>If the user does not input both the required values, the code will enter the if statement.
                             It will then show an alert asking the user to input valid values. If the input is valid the
                             code will enter the else statement. We'll add code the else statement to calculate the tip
@@ -1205,10 +1204,10 @@ Good luck, and have fun!
             
 <span class="hljs-keyword">switch</span>(x) {
   <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
-    <span class="hljs-comment">// code to execute if x==1</span>
+    <span class="hljs-comment">// code to execute if x===1</span>
     <span class="hljs-keyword">break</span>;
   <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
-    <span class="hljs-comment">// code to execute if x==2</span>
+    <span class="hljs-comment">// code to execute if x===2</span>
     <span class="hljs-keyword">break</span>;
   <span class="hljs-keyword">default</span>:
     <span class="hljs-comment">// code to execute if x is neither 1 nor 2</span>
@@ -1218,7 +1217,7 @@ Good luck, and have fun!
                 <h3>For Loop</h3>
                 <pre><code class="hljs php">
             
-<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = startCondition; i &lt; = endCondition; i += incrementAmount) {
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = startCondition; i &lt; = endCondition; i += incrementAmount) {
 <span class="hljs-comment">// code to execute on each loop until the middle condition is met.</span>
 }
             
@@ -1416,9 +1415,9 @@ x = <span class="hljs-number">0</span>;
                     get the userAgent object, and check to see if it has a specific browser name key as a property.
                 </p>
                 <pre><code class="hljs php">
-<span class="hljs-keyword">var</span> usrAg = navigator.userAgent;
+<span class="hljs-keyword">let</span> usrAg = navigator.userAgent;
 
-<span class="hljs-keyword">var</span> browserName;
+<span class="hljs-keyword">let</span> browserName;
 <span class="hljs-keyword">if</span> (usrAg.indexOf(<span class="hljs-string">"Chrome"</span>) &gt; <span class="hljs-number">-1</span>) {
     browserName = <span class="hljs-string">"Google Chrome"</span>;
 }
